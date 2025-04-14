@@ -1,8 +1,71 @@
-# macOS file
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-error.log*
+yarn-debug.log*
+
+# Build output
+dist/
+build/
+coverage/
+
+# System files
 .DS_Store
+Thumbs.db
 
-# Widows OS file
-thumbs.db
+# IDE / Editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
 
-# all docs with .map extension will be ignored
-*.map
+# Logs
+logs/
+*.log
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Parcel cache
+.cache/
+
+# Mac filesystem
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Compiled CSS
+*.css.map
+
+# SASS cache
+.sass-cache/
+
+# Temporary files
+tmp/
+temp/
+
+# JetBrains IDEs
+*.iml
+.idea/
+
+# VS Code
+.history/
+
+# Lock files (if you prefer to ignore)
+# package-lock.json
+# yarn.lock
+
+# Generated sprite or assets folders
+assets/sprites/
