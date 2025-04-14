@@ -1,0 +1,17 @@
+// Normalize/Reset CSS
+@import url('./normalize.css');
+
+// Setups
+@import './functions';   
+@import './variables';   
+@import './mixins'; 
+@import './media';      
+@import './base';        
+      
+// Blocks
+@import './button';
+@import './header';
+@import './hero';
+@import './skills';
+@import './projects';
+@import './footer';

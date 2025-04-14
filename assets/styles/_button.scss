@@ -1,0 +1,63 @@
+.button {
+  background-color: $white;
+  border: solid 2px $primary-color;
+  border-radius: 16px;
+  padding: 8px 16px;
+  cursor: pointer;
+
+  @include font(
+    $weight: $font-weight-bold,
+    $color: $primary-color
+  );
+
+  &:hover {
+    background-color: $primary-color;
+    color: $white;
+  }
+}
+
+.scroll-top {
+  width: 48px;
+  height: 48px;
+  border: 2px solid $white;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+  margin-bottom: 32px;
+  transform: translateY(20px);      // стартовая позиция ниже
+  transition:
+    opacity 0.8s ease,
+    visibility 0.8s ease,
+    background-color 0.8s ease,
+    transform 0.8s ease;
+
+  svg {
+    display: block;
+    width: 32px;
+    height: 32px;
+    color: $white;
+  }
+
+  &:hover {
+    cursor: pointer;
+    border: 2px solid $accent-color;
+
+    svg {
+      color: $accent-color;
+    }
+  }
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);        // поднимаем в исходную
+  }
+}
+
+
+

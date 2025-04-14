@@ -1,0 +1,89 @@
+.projects {
+
+  &__container {
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  &__title {
+    @include font(
+      $size: rem(40px),
+      $weight: $font-weight-bold,
+    );
+    margin-bottom: rem(32px);
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(rem(280px), 1fr));
+    gap: rem(24px);
+    width: 100%;
+    margin-top: rem(24px);
+  }
+}
+
+// Карточка проекта
+.project-card {
+  background-color: $white;
+  border: 2px solid $primary-color;
+  border-radius: rem(12px);
+  padding: rem(24px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 16px rgba($primary-color, 0.2);
+    transform: translateY(-4px);
+  }
+
+  &__title {
+    @include font(
+      $size: rem(24px),
+      $weight: $font-weight-medium,
+      $color: $text-color
+    );
+    margin-bottom: rem(8px);
+  }
+
+  &__description {
+    @include font(
+      $size: rem(16px),
+      $weight: $font-weight-regular,
+      $color: $text-color
+    );
+    flex-grow: 1;
+    margin-bottom: rem(16px);
+  }
+
+  &__link {
+    @include font(
+      $size: rem(16px),
+      $weight: $font-weight-medium,
+      $color: $accent-color
+    );
+    align-self: flex-start;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: rem(8px);
+    transition: color 0.3s ease;
+
+    svg {
+      width: rem(16px);
+      height: rem(16px);
+      fill: $accent-color;
+      transition: fill 0.3s ease;
+    }
+
+    &:hover {
+      color: darken($accent-color, 10%);
+
+      svg {
+        fill: darken($accent-color, 10%);
+      }
+    }
+  }
+}

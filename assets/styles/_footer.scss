@@ -1,0 +1,62 @@
+.footer {
+  background-color: $primary-color; 
+  color: $white;
+  text-align: center;
+  padding: rem(104px) 5.2% 32px 5.2%;
+
+  &__container {
+    @include flex-center;         
+    flex-direction: column;       
+  }
+
+  &__title {
+    @include font(
+      $size: rem(32px), 
+      $color: $white);
+      margin-bottom: rem(32px);
+  }
+
+  &__icons {
+    display: flex;
+    gap: rem(72px);
+    align-items: center;
+    justify-content: center;
+    margin-bottom: rem(56px);
+  }
+
+  &__icon {
+    color: $white;            
+
+    svg {
+      width: rem(56px);
+      height: rem(56px);
+      display: block;
+    }
+
+    &:hover {
+      color: $accent-color;   
+    }
+  }
+
+  &__copyright {
+    @include font(
+      $color: rgba($white, 0.8));
+  }
+}
+
+@include phones {
+  .footer {
+    padding: rem(104px) 13% 32px 13%;
+
+    &__icons {
+      gap: rem(40px);
+    }
+
+    &__icon {
+      svg {
+        width: rem(40px);
+        height: rem(40px);
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.skills {
+
+  &__container {
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: rem(120px);
+  }
+
+  &__title {
+    @include font(
+      $size: rem(40px),
+      $weight: $font-weight-bold,
+    );
+    margin-bottom: rem(32px);
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(40px);
+    justify-content: center;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    
+    img {
+      width: rem(88px);
+      height: rem(88px);
+      display: block;
+      transform-origin: center center;
+    }
+  }
+}

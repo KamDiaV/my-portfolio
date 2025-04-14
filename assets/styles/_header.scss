@@ -1,0 +1,145 @@
+.header {
+
+  &__container {
+      @include flex-center;
+      justify-content: space-between;
+      min-height: 80px;
+    }
+
+  &__logo {
+    svg {
+      max-height: 33px; 
+      max-width: 40px; 
+      display: block; 
+    }
+  }
+
+  &__nav {
+    position: relative;
+
+    .nav__overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: $primary-color;
+      transform-origin: top right;
+      transform: scale(0);
+      z-index: 0;
+      border-bottom-left-radius: rem(16px);
+    }
+
+    .nav__list {
+      @include flex-center;
+      gap: rem(72px); 
+      @include font();
+    }
+
+    .nav__link {
+      position: relative;
+    
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -4px;           
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;            
+        height: 2px;         
+        background-color: $primary-color;
+        @include transition(all, 0.3s, ease); 
+      }
+    
+      &:hover:after {
+        width: 100%;         
+      }
+    }
+
+    &.is-open {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: $z-index-menu;
+      overflow: hidden;
+
+      .nav__overlay {
+        transform: scale(1);
+      }
+
+      .nav__list {
+        display: flex;
+        flex-direction: column;
+        gap: rem(32px);
+        align-items: center;
+        justify-content: center;
+        height: 100%;      
+        margin: 0;   
+      }
+
+      .nav__link { 
+        color: $white; 
+
+        &:after {
+          background-color: $white;
+        }
+      }
+    }
+  }
+}
+
+.burger-menu {
+  display: none;
+  cursor: pointer;
+
+  span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin: 6px 0;
+    background-color: $primary-color;
+    @include transition(all, 0.5s, ease);
+  }
+
+  &.is-open {
+    span {
+      background-color: $accent-color;
+    }
+
+    span:nth-child(1){ 
+      transform: translateY(8px) rotate(45deg); 
+    }
+
+    span:nth-child(2){
+      opacity: 0; 
+    }
+
+    span:nth-child(3){
+      transform: translateY(-8px) rotate(-45deg); 
+    }
+  }
+}
+
+@include phones {
+  .header {
+    &__nav,
+    .button {
+      display: none;
+    }
+  }
+
+  .burger-menu {
+    display: block;
+    z-index: $z-index-menu + 1;
+
+    &.active span {
+      background-color: $accent-color;
+    }
+  }
+
+  .is-open { 
+    display: block; 
+  }
+}
