@@ -80,8 +80,12 @@ footer {
   background-color: #ffffff;
   border: solid 2px #6C26B2;
   border-radius: 16px;
-  padding: 8px 16px;
+  padding: 12px 32px;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-weight: 700;
@@ -90,6 +94,16 @@ footer {
 }
 .button:hover {
   background-color: #6C26B2;
+  color: #ffffff;
+}
+.button svg {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #6C26B2;
+  transition: fill 0.3s ease;
+}
+.button svg:hover {
   color: #ffffff;
 }
 
@@ -133,6 +147,9 @@ footer {
   justify-content: center;
   justify-content: space-between;
   min-height: 80px;
+}
+.header__logo {
+  margin-right: 5rem;
 }
 .header__logo svg {
   max-height: 33px;
@@ -258,7 +275,7 @@ footer {
   flex-direction: column;
   text-align: center;
   margin-top: 5.5rem;
-  margin-bottom: 7.5rem;
+  margin-bottom: 12.5rem;
 }
 .hero__title {
   font-family: "Roboto", sans-serif;
@@ -285,15 +302,19 @@ footer {
   max-width: 37.5rem;
 }
 
-.skills__container {
+.hero__container--resume {
+  margin-bottom: 7.5rem;
+}
+
+.technologies__container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  margin-bottom: 7.5rem;
+  margin-bottom: 12.5rem;
 }
-.skills__title {
+.technologies__title {
   font-family: "Roboto", sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
@@ -301,19 +322,19 @@ footer {
   color: #151C3A;
   margin-bottom: 2rem;
 }
-.skills__list {
+.technologies__list {
   display: flex;
   flex-wrap: wrap;
   gap: 2.5rem;
   justify-content: center;
 }
-.skills__item {
+.technologies__item {
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
-.skills__item img {
+.technologies__item img {
   width: 5.5rem;
   height: 5.5rem;
   display: block;
@@ -515,4 +536,192 @@ footer {
     width: 2.5rem;
     height: 2.5rem;
   }
+}
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 7.5rem;
+}
+.about__title {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: normal;
+  color: #151C3A;
+  margin-bottom: 3.5rem;
+}
+.about__profile {
+  display: flex;
+  align-items: center;
+  gap: 5.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 3.5rem;
+}
+.about__photo {
+  width: 14rem;
+  height: 14rem;
+}
+.about__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.about__name {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: normal;
+  color: #151C3A;
+  margin-bottom: 1rem;
+}
+.about__contacts-label {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  color: #151C3A;
+}
+.about__contacts {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+.about__contact-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: normal;
+  color: #151C3A;
+  transition: color 0.3s ease;
+  color: #6C26B2;
+}
+.about__contact-link svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  fill: #6C26B2;
+}
+.about__contact-link:hover {
+  color: #FFD700;
+}
+.about__text {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: normal;
+  color: #151C3A;
+  max-width: 50rem;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.fullwidth-image {
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  margin-bottom: 7.5rem;
+}
+.fullwidth-image__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.skills {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 7.5rem;
+}
+.skills__title {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: normal;
+  color: #151C3A;
+  margin-bottom: 2rem;
+}
+.skills__list {
+  text-align: left;
+}
+.skills__item {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: normal;
+  color: #151C3A;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 40px;
+}
+.skills__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url("../images/sprite.svg#star");
+  background-image: url("data:image/svg+xml;utf8,        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>          <path fill='%236C26B2' d='M11.9954 0.926712C11.3204 5.13749 10.7532 7.64062 9.19691 9.19687C7.64066 10.7531 5.13754 11.3203 0.926758 11.9953C5.13754 12.6703 7.64066 13.2375 9.19691 14.7984C10.7532 16.3547 11.3204 18.8578 11.9954 23.0719C12.6704 18.8578 13.2375 16.3547 14.7938 14.7937C16.3547 13.2375 18.8579 12.6703 23.0719 11.9953C18.8579 11.3203 16.3547 10.7531 14.7985 9.19687C13.2375 7.64062 12.6704 5.13749 11.9954 0.926712Z'/>        </svg>");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.education {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 4.5rem;
+}
+.education__title {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: normal;
+  color: #151C3A;
+  margin-bottom: 2rem;
+}
+.education__item {
+  max-width: 50rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.education__degree {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: normal;
+  color: #151C3A;
+  margin-bottom: 1rem;
+}
+.education__school {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: normal;
+  color: #151C3A;
+  margin-bottom: 0.5rem;
+}
+.education__period {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: normal;
+  color: #151C3A;
+  line-height: 1.5;
 }

@@ -2,8 +2,12 @@
   background-color: $white;
   border: solid 2px $primary-color;
   border-radius: 16px;
-  padding: 8px 16px;
+  padding: 12px 32px;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 
   @include font(
     $weight: $font-weight-bold,
@@ -13,6 +17,18 @@
   &:hover {
     background-color: $primary-color;
     color: $white;
+  }
+
+  svg {
+    display: block;
+    width: rem(24px);
+    height: rem(24px);
+    fill: $primary-color;
+    transition: fill 0.3s ease;
+
+    &:hover {
+      color: $white;
+    }
   }
 }
 

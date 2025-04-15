@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./assets/images/favicon.svg" type="image/svg+xml" />
+  <title>Resume</title>
+  <link rel="stylesheet" href="./assets/styles/main.css" />
+</head>
+
+<body>
+
+  <div class="wrapper">
+    
+    <header class="header">
+      <div class="header__container container">
+        <a href="./index.html" class="header__logo">
+          <svg>
+            <use xlink:href="./assets/images/sprite.svg#logo"></use>
+          </svg>
+        </a>
+        <div class="burger-menu" id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav class="header__nav" id="menu">
+          <div class="nav__overlay"></div>
+          <ul class="nav__list">
+            <li class="nav__item"><a href="./projects.html" class="nav__link">Projects</a></li>
+            <li class="nav__item"><a href="./resume.html" class="nav__link">Resume</a></li>
+            <li class="nav__item"><a href="https://github.com/KamDiaV" target="_blank" class="nav__link">GitHub</a></li>
+          </ul>
+        </nav>
+
+        <button class="button">Contact Me</button>
+      </div>
+    </header>
+
+    <main class="main">
+
+      <section class="hero">
+        <div class="hero__container hero__container--resume container">
+          <h1 class="hero__title">Resume</h1>
+          <button class="button">Download
+            <svg>
+              <use xlink:href="./assets/images/sprite.svg#download"></use>
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <section class="about">
+        <h2 class="about__title">About me</h2>
+      
+        <div class="about__profile">
+          <img src="./assets/images/my-photo.jpg" alt="Diana St" class="about__photo"/>
+          <div class="about__info">
+            <p class="about__name">Diana St</p>
+            <p class="about__contacts-label">Contact Information:</p>
+            <a href="tel:+77051741221" class="about__contact-link">
+              +7 (705) 174‑12‑21
+            </a>
+            <ul class="about__contacts">
+              <li class="about__contact-item">
+                <a href="https://t.me/kamikodi" target="_blank" class="about__contact-link">
+                  <svg><use xlink:href="./assets/images/sprite.svg#telegram"></use></svg>
+                </a>
+              </li>
+              <li class="about__contact-item">
+                <a href="mailto:stdiana.4224@gmail.com" class="about__contact-link">
+                  <svg><use xlink:href="./assets/images/sprite.svg#gmail"></use></svg>
+                </a>
+              </li>
+              <li class="about__contact-item">
+                <a href="https://www.linkedin.com/in/diana-stepanova-9a08a335b/" target="_blank" class="about__contact-link">
+                  <svg><use xlink:href="./assets/images/sprite.svg#linkedin"></use></svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      
+        <p class="about__text">
+          I am a qualified General Practitioner with deep attention to detail,
+          strong analytical thinking, and the ability to react quickly in
+          challenging situations. My drive for new challenges and love for
+          technology have led me to the IT field, where I am actively developing
+          my skills in frontend development. I firmly believe that the skills I
+          gained in medicine—such as a systematic approach to problem-solving
+          and high productivity—greatly complement my technical expertise and
+          help me create high-quality web products.
+          <br> 
+          <br> 
+          Additionally, I play the drums and enjoy photography, which helps me 
+          develop creative thinking and find inspiration for new projects.
+        </p>
+      </section>
+
+      <section class="fullwidth-image">
+        <img src="./assets/images/my-photo2.jpg" alt="Diana at work" class="fullwidth-image__img" />
+      </section>
+
+      <section class="skills">
+        <h2 class="skills__title">Skills</h2>
+        <ul class="skills__list">
+          <li class="skills__item">HTML5, CSS3, Sass/SCSS</li>
+          <li class="skills__item">BEM methodology, Flexbox, Grid Layout, responsive and cross‑browser design</li>
+          <li class="skills__item">Basic UX/UI</li>
+          <li class="skills__item">JavaScript (ES6+), TypeScript basics</li>
+          <li class="skills__item">React, Vue.js (basic level), Bootstrap</li>
+          <li class="skills__item">Git, npm, webpack, VS Code, Chrome DevTools</li>
+          <li class="skills__item">Version control systems</li>
+          <li class="skills__item">Git Flow (branching, code review, merge &amp; pull request practices)</li>
+          <li class="skills__item">JSON API, REST</li>
+          <li class="skills__item">Figma, Adobe Photoshop (mockups &amp; graphics)</li>
+          <li class="skills__item">Agile (Scrum / Kanban)</li>
+          <li class="skills__item">Team collaboration, participation in sprints, planning, retrospectives</li>
+        </ul>
+      </section>
+
+      <section class="education">
+        <h2 class="education__title">Education</h2>
+
+        <div class="education__item">
+          <h3 class="education__degree">Online Frontend Development Course</h3>
+          <p class="education__school">ITGirls School</p>
+          <p class="education__period">September 2024 – present</p>
+        </div>
+
+        <div class="education__item">
+          <h3 class="education__degree">Higher Medical Education (General Practitioner)</h3>
+          <p class="education__school">Karaganda Medical University, Karaganda</p>
+          <p class="education__period">
+            Bachelor’s Degree: 2014 – 2019<br>
+            Internship: 2019 – 2021<br>
+            Specialization: General Medicine
+          </p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+  
+  <footer class="footer">
+    <div class="footer__container container">
+      <h2 class="footer__title">Focused. Steady. Ready to deploy.</h2>
+
+      <button id="scroll-top" class="scroll-top" aria-label="Наверх">
+        <svg>
+          <use xlink:href="./assets/images/sprite.svg#upper-arrow"></use>
+        </svg>
+      </button>
+  
+      <div class="footer__icons">
+        <a href="https://t.me/kamikodi" target="_blank" class="footer__icon" aria-label="telegram">
+          <svg>
+            <use xlink:href="./assets/images/sprite.svg#telegram"></use>
+          </svg>
+        </a>
+        <a href="mailto:stdiana.4224@gmail.com" class="footer__icon" target="_blank" aria-label="gmail">
+          <svg>
+            <use xlink:href="./assets/images/sprite.svg#gmail"></use>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/diana-stepanova-9a08a335b/" target="_blank" class="footer__icon" aria-label="linkedin">
+          <svg>
+            <use xlink:href="./assets/images/sprite.svg#linkedin"></use>
+          </svg>
+        </a>
+      </div>
+
+      <p class="footer__copyright">
+        © 2025 Diana St
+      </p>
+    </div>
+  </footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="./assets/js/burgermenu-animation.js"></script>
+  <script src="./assets/js/scroll-top-button.js"></script>
+
+</body>
+</html>

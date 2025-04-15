@@ -1,10 +1,10 @@
-.skills {
+.technologies {
 
   &__container {
     @include flex-center;
     flex-direction: column;
     text-align: center;
-    margin-bottom: rem(120px);
+    margin-bottom: rem(200px);
   }
 
   &__title {
