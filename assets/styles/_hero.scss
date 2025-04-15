@@ -18,7 +18,7 @@
 
   &__subtitle {
     @include font(
-      $size: rem(24px),
+      $size: rem(24px)
     );
     margin-bottom: rem(32px);
   }
@@ -26,7 +26,7 @@
   &__description {
     @include font(
       $size: rem(24px),
-      $line-height: 1.5,
+      $line-height: 1.5
     );
     max-width: rem(600px);
   }

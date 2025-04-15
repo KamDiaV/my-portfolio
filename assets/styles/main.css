@@ -326,6 +326,7 @@ footer {
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  margin-bottom: 12.5rem;
 }
 .projects__title {
   font-family: "Roboto", sans-serif;
@@ -335,69 +336,126 @@ footer {
   color: #151C3A;
   margin-bottom: 2rem;
 }
+.projects__subtitle {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: normal;
+  color: #151C3A;
+  margin-bottom: 2rem;
+}
 .projects__cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
   width: 100%;
-  margin-top: 1.5rem;
 }
 
 .project-card {
   background-color: #ffffff;
   border: 2px solid #6C26B2;
-  border-radius: 0.75rem;
+  border-radius: 16px;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-align: left;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
+  margin-bottom: 2rem;
 }
 .project-card:hover {
-  box-shadow: 0 4px 16px rgba(108, 38, 178, 0.2);
-  transform: translateY(-4px);
+  box-shadow: 0 2px 8px rgba(108, 38, 178, 0.2);
+  transform: translateY(-2px);
 }
 .project-card__title {
   font-family: "Roboto", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 700;
   line-height: normal;
   color: #151C3A;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 .project-card__description {
   font-family: "Roboto", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 400;
   line-height: normal;
   color: #151C3A;
-  flex-grow: 1;
   margin-bottom: 1rem;
+}
+.project-card__tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.project-card__tech {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  color: #151C3A;
+  background-color: #E7E7E7;
+  padding: 4px 8px;
+  border-radius: 32px;
+}
+.project-card__links {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
 }
 .project-card__link {
   font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 0.875rem;
+  font-weight: 400;
   line-height: normal;
-  color: #FFD700;
-  align-self: flex-start;
-  text-decoration: none;
+  color: #151C3A;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  transition: color 0.3s ease;
+  gap: 8px;
 }
 .project-card__link svg {
   width: 1rem;
   height: 1rem;
+}
+.project-card .project-card__link--github {
+  position: relative;
+  color: #3E0789;
+}
+.project-card .project-card__link--github:after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #3E0789;
+  transition: all 0.3s ease;
+}
+.project-card .project-card__link--github:hover:after {
+  width: 100%;
+}
+.project-card .project-card__link--live {
+  position: relative;
+  color: #FFD700;
+}
+.project-card .project-card__link--live svg {
   fill: #FFD700;
-  transition: fill 0.3s ease;
 }
-.project-card__link:hover {
-  color: #ccac00;
+.project-card .project-card__link--live:after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #FFD700;
+  transition: all 0.3s ease;
 }
-.project-card__link:hover svg {
-  fill: #ccac00;
+.project-card .project-card__link--live:hover:after {
+  width: 100%;
 }
 
 .footer {

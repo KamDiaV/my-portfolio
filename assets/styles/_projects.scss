@@ -4,6 +4,7 @@
     @include flex-center;
     flex-direction: column;
     text-align: center;
+    margin-bottom: rem(200px);
   }
 
   &__title {
@@ -14,76 +15,127 @@
     margin-bottom: rem(32px);
   }
 
+  &__subtitle {
+    @include font(
+      $size: rem(24px)
+    );
+    margin-bottom: rem(32px);
+  }
+
   &__cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(rem(280px), 1fr));
-    gap: rem(24px);
+    gap: rem(32px);
     width: 100%;
-    margin-top: rem(24px);
   }
 }
 
-// Карточка проекта
 .project-card {
   background-color: $white;
-  border: 2px solid $primary-color;
-  border-radius: rem(12px);
+  border: 2px solid $primary-color; 
+  border-radius: 16px;
   padding: rem(24px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-align: left;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
+  margin-bottom: rem(32px);
 
   &:hover {
-    box-shadow: 0 4px 16px rgba($primary-color, 0.2);
-    transform: translateY(-4px);
+    box-shadow: 0 2px 8px rgba($primary-color, 0.2);
+    transform: translateY(-2px);
   }
 
   &__title {
     @include font(
-      $size: rem(24px),
-      $weight: $font-weight-medium,
-      $color: $text-color
+      $weight: $font-weight-bold,
     );
-    margin-bottom: rem(8px);
+    margin-bottom: rem(16px);
   }
 
   &__description {
-    @include font(
-      $size: rem(16px),
-      $weight: $font-weight-regular,
-      $color: $text-color
-    );
-    flex-grow: 1;
+    @include font();
     margin-bottom: rem(16px);
+  }
+
+  &__tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(16px);
+    margin-bottom: rem(32px);
+  }
+
+  &__tech {
+    @include font();
+    background-color: $grey;
+    padding: 4px 8px;
+    border-radius: 32px;
+  }
+
+  &__links {
+    display: flex;
+    justify-content: space-between;
+    gap: rem(16px);
   }
 
   &__link {
     @include font(
-      $size: rem(16px),
-      $weight: $font-weight-medium,
-      $color: $accent-color
+      $size: rem(14px)
     );
-    align-self: flex-start;
-    text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: rem(8px);
-    transition: color 0.3s ease;
-
+    gap: 8px;
+  
     svg {
       width: rem(16px);
       height: rem(16px);
-      fill: $accent-color;
-      transition: fill 0.3s ease;
     }
-
-    &:hover {
-      color: darken($accent-color, 10%);
-
-      svg {
-        fill: darken($accent-color, 10%);
+  }
+  
+  .project-card__link--github {
+    position: relative;
+    color: $secondary-color;
+    
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -6px;           
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;            
+        height: 2px;         
+        background-color: $secondary-color;
+        @include transition(all, 0.3s, ease); 
       }
+    
+      &:hover:after {
+        width: 100%;         
+      }
+  }
+  
+  .project-card__link--live {
+    position: relative;
+    color: $accent-color;       
+    svg {
+      fill: $accent-color;
+    }
+  
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -6px;           
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;            
+      height: 2px;         
+      background-color: $accent-color;
+      @include transition(all, 0.3s, ease); 
+    }
+  
+    &:hover:after {
+      width: 100%;         
     }
   }
 }
+
