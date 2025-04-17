@@ -39,12 +39,13 @@
   flex-direction: column;
   justify-content: space-between;
   text-align: left;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin-bottom: rem(32px);
+  cursor: pointer;
 
   &:hover {
-    box-shadow: 0 2px 8px rgba($primary-color, 0.2);
-    transform: translateY(-2px);
+    transform: translateY(-4px);
+    box-shadow: 0 rem(4px) rem(16px) rgba($primary-color, 0.2);
   }
 
   &__title {

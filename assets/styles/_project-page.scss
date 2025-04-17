@@ -1,0 +1,177 @@
+.projects-detail {
+  @include flex-center;
+  flex-direction: column;
+  margin-bottom: rem(120px);
+
+  &__list {
+    display: grid;
+    gap: 80px;
+  }
+}
+
+.project-detail {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "title  title"
+    "slider body"
+    "links  links";
+  column-gap: 32px;
+  row-gap: 48px;
+  background-color: $white;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba($grey, 0.6);
+  box-shadow: 0 2px 4px rgba($grey, 0.5);
+
+  padding: 24px;
+
+  &__title {
+    grid-area: title;
+    @include font($size: rem(24px), $weight: $font-weight-bold);
+    text-align: center;
+  }
+
+  .slider {
+    grid-area: slider;
+    display: grid;
+    grid-template-rows: rem(300px) rem(80px);
+    row-gap: rem(24px);
+    width: 100%;
+    max-width: rem(644px);
+
+    &__main {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    &__slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: 0;
+
+      &.active {
+        opacity: 1;
+        z-index: 1;
+      }
+    }
+
+    &__thumbs {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: rem(8px);
+    }
+
+    &__thumb {
+      width: rem(64px);
+      height: rem(64px);
+      object-fit: cover;
+      cursor: pointer;
+      opacity: 0.6;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      transition: opacity 0.3s ease, border-color 0.3s ease;
+
+      &.active {
+        opacity: 1;
+        border-color: $accent-color;
+      }
+    }
+  }
+
+  &__body {
+    grid-area: body;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  &__tech {
+    @include font();
+    margin-bottom: 16px;
+
+    &-item {
+      color: $primary-color;
+    }
+  }
+  
+    &__description {
+      @include font();
+      margin-bottom: 16px;
+    }
+  
+    &__feature {
+      @include font();
+      margin-bottom: rem(8px);
+      position: relative;
+      padding-left: rem(24px);
+  
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: rem(16px);
+        height: rem(16px);
+        background-image: url('../images/star.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+  
+    &__links {
+      grid-area: links;
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+    }
+  
+    &__link {
+      @include font();
+      display: inline-flex;
+      align-items: center;
+      transition: color 0.3s ease;
+      gap: 8px;
+  
+      svg {
+        width: rem(16px);
+        height: rem(16px);
+        fill: currentColor;
+      }
+
+      position: relative;
+    
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -4px;           
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;            
+        height: 2px;         
+        background-color: $primary-color;
+        @include transition(all, 0.3s, ease); 
+      }
+
+      &:hover {
+        color: $secondary-color;
+      }
+    
+      &:hover:after {
+        width: 100%;         
+      }
+    }
+}
+
+
+

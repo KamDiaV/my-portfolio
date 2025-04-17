@@ -83,11 +83,12 @@
 }
 
 .fullwidth-image {
+  position: relative;
   width: 100vw;
-  margin-left: 50%;
+  left: 50%;
   transform: translateX(-50%);
-  overflow: hidden;
   margin-bottom: rem(120px);
+  overflow: hidden;
 
   &__img {
     display: block;
@@ -114,6 +115,7 @@
 
   &__list {
     text-align: left;
+    max-width: rem(800px);
   }
 
   &__item {

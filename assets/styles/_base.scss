@@ -17,6 +17,7 @@ body {
   position: relative;
   color: $text-color;
   background-color: $white;
+  overflow-x: hidden;
 }
 
 a {

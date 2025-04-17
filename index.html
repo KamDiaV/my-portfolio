@@ -11,6 +11,7 @@
 <body>
 
   <div class="wrapper">
+    <canvas id="snake-bg"></canvas>
     
     <header class="header">
       <div class="header__container container">
@@ -89,11 +90,11 @@
           </p>
           
           <div class="projects__cards">
-            <article class="project-card">
+            <article class="project-card" data-project="portfolio" onclick="selectProject('portfolio')">
 
               <h2 class="project-card__title">Portfolio</h2>
               <p class="project-card__description">A portfolio website.</p>
-            
+              
               <ul class="project-card__tech-list">
                 <li class="project-card__tech">HTML</li>
                 <li class="project-card__tech">CSS</li>
@@ -117,7 +118,7 @@
               </div>
             </article>
 
-            <article class="project-card">
+            <article class="project-card" data-project="airy-balloons" onclick="selectProject('airy-balloons')">
               <h2 class="project-card__title">AIRY Balloons</h2>
               <p class="project-card__description">A website for selling and delivering balloons.</p>
             
@@ -144,7 +145,7 @@
               </div>
             </article>
 
-            <article class="project-card">
+            <article class="project-card" data-project="vesna" onclick="selectProject('vesna')">
               <h2 class="project-card__title">Vesna</h2>
               <p class="project-card__description">A multi-page website for landscape design company Vesna.</p>
             
@@ -216,10 +217,12 @@
     </div>
   </footer>
   
+  <script src="./assets/js/project-selector.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
   <script src="./assets/js/burgermenu-animation.js"></script>
   <script src="./assets/js/technologies-animation.js"></script>
   <script src="./assets/js/scroll-top-button.js"></script>
+  <script src="./assets/js/snake-bg.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./assets/images/favicon.svg" type="image/svg+xml" />
+  <title>Projects</title>
+  <link rel="stylesheet" href="./assets/styles/main.css" />
+</head>
+
+<body>
+
+  <div class="wrapper">
+    
+    <header class="header">
+      <div class="header__container container">
+        <a href="./index.html" class="header__logo">
+          <svg>
+            <use xlink:href="./assets/images/sprite.svg#logo"></use>
+          </svg>
+        </a>
+        <div class="burger-menu" id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav class="header__nav" id="menu">
+          <div class="nav__overlay"></div>
+          <ul class="nav__list">
+            <li class="nav__item"><a href="./projects.html" class="nav__link">Projects</a></li>
+            <li class="nav__item"><a href="./resume.html" class="nav__link">Resume</a></li>
+            <li class="nav__item"><a href="https://github.com/KamDiaV" target="_blank" class="nav__link">GitHub</a></li>
+          </ul>
+        </nav>
+
+        <button class="button">Contact Me</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="hero">
+        <div class="hero__container hero__container--projects container">
+          <h1 class="hero__title">Projects</h1>
+        </div>
+      </section>
+
+      <section class="projects-detail">
+        <div class="projects-detail__container container">
+          <ul class="projects-detail__list">
+            <!-- Portfolio -->
+            <li class="projects-detail__item">
+              <article class="project-detail" data-project="portfolio">
+                <h2 class="project-detail__title">Portfolio</h2>
+                <figure class="project-detail__image slider">
+                  <div class="slider__main">
+                    <img src="./assets/images/airy-balloons-1.jpg" alt="AIRY Balloons – screenshot 1" class="slider__slide" />
+                    <img src="./assets/images/airy-balloons-2.jpg" alt="AIRY Balloons – screenshot 2" class="slider__slide" />
+                    <img src="./assets/images/airy-balloons-3.jpg" alt="AIRY Balloons – screenshot 3" class="slider__slide" />
+                    <img src="./assets/images/airy-balloons-4.jpg" alt="AIRY Balloons – screenshot 3" class="slider__slide" />
+                    <img src="./assets/images/airy-balloons-5.jpg" alt="AIRY Balloons – screenshot 3" class="slider__slide" />
+                    <img src="./assets/images/airy-balloons-6.jpg" alt="AIRY Balloons – screenshot 3" class="slider__slide" />
+                  </div>
+                  <div class="slider__thumbs">
+                    <img src="./assets/images/airy-balloons-1.jpg" data-index="0" alt="" class="slider__thumb" />
+                    <img src="./assets/images/airy-balloons-2.jpg" data-index="1" alt="" class="slider__thumb" />
+                    <img src="./assets/images/airy-balloons-3.jpg" data-index="2" alt="" class="slider__thumb" />
+                    <img src="./assets/images/airy-balloons-4.jpg" data-index="3" alt="" class="slider__thumb" />
+                    <img src="./assets/images/airy-balloons-5.jpg" data-index="4" alt="" class="slider__thumb" />
+                    <img src="./assets/images/airy-balloons-6.jpg" data-index="5" alt="" class="slider__thumb" />
+                  </div>
+                </figure>
+                <div class="project-detail__body">
+                  <p class="project-detail__tech">
+                    Technologies Used:
+                    <span class="project-detail__tech-item">HTML5</span>,
+                    <span class="project-detail__tech-item">CSS3/SCSS</span>,
+                    <span class="project-detail__tech-item">JS</span>,
+                    <span class="project-detail__tech-item">Node.js</span>,
+                    <span class="project-detail__tech-item">Netlify</span>,
+                    <span class="project-detail__tech-item">Git</span>,
+                    <span class="project-detail__tech-item">GitHub</span>,
+                    <span class="project-detail__tech-item">npm</span>,
+                    <span class="project-detail__tech-item">Figma</span>
+                  </p>
+                  <p class="project-detail__description">
+                    A portfolio website.
+                  </p>
+                  <ul class="project-detail__features">
+                    <li class="project-detail__feature">Product catalog with category filtering</li>
+                    <li class="project-detail__feature">Individual product pages with detailed descriptions</li>
+                    <li class="project-detail__feature">Shopping cart and checkout flow with form validation</li>
+                    <li class="project-detail__feature">Serverless order handling via Netlify Functions</li>
+                    <li class="project-detail__feature">Automatic Telegram notifications upon order submission</li>
+                  </ul>
+                  
+                </div>
+                <div class="project-detail__links">
+                  <a href="https://github.com/KamDiaV/my-portfolio" target="_blank" class="project-detail__link project-detail__link--github" target="_blank" aria-label="GitHub">
+                    <svg>
+                      <use xlink:href="./assets/images/sprite.svg#github"></use>
+                    </svg>
+                    GitHub
+                  </a>
+                  <a href="https://kamdiav.github.io/my-portfolio/" target="_blank" class="project-detail__link project-detail__link--live" target="_blank" aria-label="Live">
+                    <svg>
+                      <use xlink:href="./assets/images/sprite.svg#link"></use>
+                    </svg>
+                    Live
+                  </a>
+                </div>
+              </article>
+            </li>
+      
+            <!-- AIRY Balloons -->
+            <li class="projects-detail__item">
+              <article class="project-detail" data-project="airy-balloons">
+                <h2 class="project-detail__title">AIRY Balloons</h2>
+                <figure class="project-detail__image slider">
+                  <div class="slider__main">
+                    <img src="./assets/images/airy-balloons-1.jpg" alt="AIRY Balloons – screenshot 1" class="slider__slide" />
+                    <img src="./assets/images/airy-balloons-2.jpg" alt="AIRY Balloons – screenshot 2" class="slider__slide" />
+                    <img src="./assets/images/airy-balloons-3.jpg" alt="AIRY Balloons – screenshot 3" class="slider__slide" />
+                    <img src="./assets/images/airy-balloons-4.jpg" alt="AIRY Balloons – screenshot 3" class="slider__slide" />
+                    <img src="./assets/images/airy-balloons-5.jpg" alt="AIRY Balloons – screenshot 3" class="slider__slide" />
+                    <img src="./assets/images/airy-balloons-6.jpg" alt="AIRY Balloons – screenshot 3" class="slider__slide" />
+                  </div>
+                  <div class="slider__thumbs">
+                    <img src="./assets/images/airy-balloons-1.jpg" data-index="0" alt="" class="slider__thumb" />
+                    <img src="./assets/images/airy-balloons-2.jpg" data-index="1" alt="" class="slider__thumb" />
+                    <img src="./assets/images/airy-balloons-3.jpg" data-index="2" alt="" class="slider__thumb" />
+                    <img src="./assets/images/airy-balloons-4.jpg" data-index="3" alt="" class="slider__thumb" />
+                    <img src="./assets/images/airy-balloons-5.jpg" data-index="4" alt="" class="slider__thumb" />
+                    <img src="./assets/images/airy-balloons-6.jpg" data-index="5" alt="" class="slider__thumb" />
+                  </div>
+                </figure>
+                <div class="project-detail__body">
+                  <p class="project-detail__tech">
+                    Technologies Used:
+                    <span class="project-detail__tech-item">HTML5</span>,
+                    <span class="project-detail__tech-item">CSS3/SCSS</span>,
+                    <span class="project-detail__tech-item">JS</span>,
+                    <span class="project-detail__tech-item">Node.js</span>,
+                    <span class="project-detail__tech-item">Netlify</span>,
+                    <span class="project-detail__tech-item">Git</span>,
+                    <span class="project-detail__tech-item">GitHub</span>,
+                    <span class="project-detail__tech-item">npm</span>,
+                    <span class="project-detail__tech-item">Figma</span>
+                  </p>
+                  <p class="project-detail__description">
+                    AIRY is an e‑commerce site for selling and delivering balloons, built as an SPA/landing page with additional functionality (product catalog, product detail page, shopping cart, checkout, etc.). The site is deployed on Netlify and uses Serverless functions to handle orders. When an order is placed, a message with the cart and form data is automatically sent to Telegram.
+                    <br>
+                    <br>
+                    The homepage (landing) is implemented as a single‑page application, while the additional pages (catalog, product page, cart, etc.) are loaded separately. This approach helps organize the site’s information and functionality more effectively.
+                  </p>
+                  <ul class="project-detail__features">
+                    <li class="project-detail__feature">Product catalog with category filtering</li>
+                    <li class="project-detail__feature">Individual product pages with detailed descriptions</li>
+                    <li class="project-detail__feature">Shopping cart and checkout flow with form validation</li>
+                    <li class="project-detail__feature">Serverless order handling via Netlify Functions</li>
+                    <li class="project-detail__feature">Automatic Telegram notifications upon order submission</li>
+                  </ul>
+                  
+                </div>
+                <div class="project-detail__links">
+                  <a href="https://github.com/KamDiaV/airy-balloons" target="_blank" class="project-detail__link project-detail__link--github" target="_blank" aria-label="GitHub">
+                    <svg>
+                      <use xlink:href="./assets/images/sprite.svg#github"></use>
+                    </svg>
+                    GitHub
+                  </a>
+                  <a href="https://airy-balloons.netlify.app/" target="_blank" class="project-detail__link project-detail__link--live" target="_blank" aria-label="Live">
+                    <svg>
+                      <use xlink:href="./assets/images/sprite.svg#link"></use>
+                    </svg>
+                    Live
+                  </a>
+                </div>
+              </article>
+            </li>
+      
+            <!-- Vesna -->
+            <li class="projects-detail__item">
+              <article class="project-detail" data-project="vesna">
+                <h2 class="project-detail__title">Vesna</h2>
+                <figure class="project-detail__image slider">
+                  <div class="slider__main">
+                    <img src="./assets/images/airy-balloons-1.jpg" alt="AIRY Balloons – screenshot 1" class="slider__slide" />
+                    <img src="./assets/images/airy-balloons-2.jpg" alt="AIRY Balloons – screenshot 2" class="slider__slide" />
+                    <img src="./assets/images/airy-balloons-3.jpg" alt="AIRY Balloons – screenshot 3" class="slider__slide" />
+                    <img src="./assets/images/airy-balloons-4.jpg" alt="AIRY Balloons – screenshot 3" class="slider__slide" />
+                    <img src="./assets/images/airy-balloons-5.jpg" alt="AIRY Balloons – screenshot 3" class="slider__slide" />
+                    <img src="./assets/images/airy-balloons-6.jpg" alt="AIRY Balloons – screenshot 3" class="slider__slide" />
+                  </div>
+                  <div class="slider__thumbs">
+                    <img src="./assets/images/airy-balloons-1.jpg" data-index="0" alt="" class="slider__thumb" />
+                    <img src="./assets/images/airy-balloons-2.jpg" data-index="1" alt="" class="slider__thumb" />
+                    <img src="./assets/images/airy-balloons-3.jpg" data-index="2" alt="" class="slider__thumb" />
+                    <img src="./assets/images/airy-balloons-4.jpg" data-index="3" alt="" class="slider__thumb" />
+                    <img src="./assets/images/airy-balloons-5.jpg" data-index="4" alt="" class="slider__thumb" />
+                    <img src="./assets/images/airy-balloons-6.jpg" data-index="5" alt="" class="slider__thumb" />
+                  </div>
+                </figure>
+                <div class="project-detail__body">
+                  <p class="project-detail__tech">
+                    Technologies Used:
+                    <span class="project-detail__tech-item">HTML5</span>,
+                    <span class="project-detail__tech-item">CSS3/SCSS</span>,
+                    <span class="project-detail__tech-item">JS</span>,
+                    <span class="project-detail__tech-item">Node.js</span>,
+                    <span class="project-detail__tech-item">Netlify</span>,
+                    <span class="project-detail__tech-item">Git</span>,
+                    <span class="project-detail__tech-item">GitHub</span>,
+                    <span class="project-detail__tech-item">npm</span>,
+                    <span class="project-detail__tech-item">Figma</span>
+                  </p>
+                  <p class="project-detail__description">
+                    A multi-page website for landscape design company Vesna.
+                  </p>
+                  <ul class="project-detail__features">
+                    <li class="project-detail__feature">Product catalog with category filtering</li>
+                    <li class="project-detail__feature">Individual product pages with detailed descriptions</li>
+                    <li class="project-detail__feature">Shopping cart and checkout flow with form validation</li>
+                    <li class="project-detail__feature">Serverless order handling via Netlify Functions</li>
+                    <li class="project-detail__feature">Automatic Telegram notifications upon order submission</li>
+                  </ul>
+                  
+                </div>
+                <div class="project-detail__links">
+                  <a href="https://github.com/KamDiaV/vesna-website" target="_blank" class="project-detail__link project-detail__link--github" target="_blank" aria-label="GitHub">
+                    <svg>
+                      <use xlink:href="./assets/images/sprite.svg#github"></use>
+                    </svg>
+                    GitHub
+                  </a>
+                  <a href="https://anastasiia-avdeeva.github.io/Vesna-website/" target="_blank" class="project-detail__link project-detail__link--live" target="_blank" aria-label="Live">
+                    <svg>
+                      <use xlink:href="./assets/images/sprite.svg#link"></use>
+                    </svg>
+                    Live
+                  </a>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+      
+      
+    </main>
+  </div>
+  
+  <footer class="footer">
+    <div class="footer__container container">
+      <h2 class="footer__title">Focused. Steady. Ready to deploy.</h2>
+
+      <button id="scroll-top" class="scroll-top" aria-label="Наверх">
+        <svg>
+          <use xlink:href="./assets/images/sprite.svg#upper-arrow"></use>
+        </svg>
+      </button>
+  
+      <div class="footer__icons">
+        <a href="https://t.me/kamikodi" target="_blank" class="footer__icon" aria-label="telegram">
+          <svg>
+            <use xlink:href="./assets/images/sprite.svg#telegram"></use>
+          </svg>
+        </a>
+        <a href="mailto:stdiana.4224@gmail.com" class="footer__icon" target="_blank" aria-label="gmail">
+          <svg>
+            <use xlink:href="./assets/images/sprite.svg#gmail"></use>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/diana-stepanova-9a08a335b/" target="_blank" class="footer__icon" aria-label="linkedin">
+          <svg>
+            <use xlink:href="./assets/images/sprite.svg#linkedin"></use>
+          </svg>
+        </a>
+      </div>
+
+      <p class="footer__copyright">
+        © 2025 Diana St
+      </p>
+    </div>
+  </footer>
+
+
+  <script src="./assets/js/project-selector.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="./assets/js/burgermenu-animation.js"></script>
+  <script src="./assets/js/project-slider.js"></script>
+  <script src="./assets/js/scroll-top-button.js"></script>
+
+</body>
+</html>

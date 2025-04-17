@@ -40,6 +40,10 @@
 
     .nav__link {
       position: relative;
+
+      &:hover {
+        color: $secondary-color;
+      }
     
       &:after {
         content: "";
