@@ -92,4 +92,4 @@ All CSS classes follow the Block__Element--Modifier pattern. This keeps styles m
 Diana Stepanova
 
 - Telegram: [@kamikodi](https://t.me/kamikodi)
-- [LinkedIn:](https://www.linkedin.com/in/diana-stepanova-9a08a335b/)
+- [LinkedIn](https://www.linkedin.com/in/diana-stepanova-9a08a335b/)
