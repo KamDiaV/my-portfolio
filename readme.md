@@ -37,8 +37,6 @@ Welcome to my personal portfolio! This static site showcases my skills, technolo
 - **HTML5** & **SCSS** (compiled to CSS)  
 - **Vanilla JavaScript** (ES6+)  
 - **Anime.js** for certain animations  
-- **Netlify** (deployment)  
-- **Serverless Functions** for order‑processing (in AIRY Balloons project)  
 
 ---
 
@@ -47,7 +45,7 @@ Welcome to my personal portfolio! This static site showcases my skills, technolo
 ### Prerequisites
 
 - A modern browser (Chrome, Firefox, Safari, Edge)  
-- [Node.js & npm](https://nodejs.org/) (optional, if you want to compile SCSS locally)  
+- Node.js & npm (optional, if you want to compile SCSS locally)  
 
 ### Installation
 
@@ -66,20 +64,7 @@ Welcome to my personal portfolio! This static site showcases my skills, technolo
   Just open index.html in your browser
 
 ## 📁 Project Structure
-/
-├── index.html           ← Home page
-├── projects.html        ← Full projects list & details
-├── resume.html          ← Resume page
-├── assets/
-│   ├── images/          ← Icons, screenshots, sprite.svg
-│   ├── styles/main.css  ← Compiled CSS (from SCSS)
-│   └── js/
-│       ├── burgermenu-animation.js
-│       ├── technologies-animation.js
-│       ├── scroll-top-button.js
-│       ├── project-selector.js
-│       └── snake-bg.js
-└── README.md            ← This file
+image.png
 
 ## 🎛 Usage & Interactivity
 
@@ -119,23 +104,10 @@ Click Contact Me:
 - Styled and animated via SCSS in contact-popup block
 
 ## 🔧 BEM Methodology
-All CSS classes follow the Block__Element--Modifier pattern:
-<section class="projects-detail">
-  <ul class="projects-detail__list">
-    <li class="projects-detail__item">
-      <article class="project-detail project-detail--wide">
-        <h3 class="project-detail__title">…</h3>
-        …
-      </article>
-    </li>
-  </ul>
-</section>
-This keeps styles modular, reusable, and easy to maintain.
+All CSS classes follow the Block__Element--Modifier pattern. This keeps styles modular, reusable, and easy to maintain.
 
 ## 👩‍💻 Author
 Diana Stepanova
 
-- Telegram: [@kamikodi] (https://t.me/kamikodi)
-- [LinkedIn:] (https://www.linkedin.com/in/diana-stepanova-9a08a335b/)
-
-“Focused. Steady. Ready to deploy.”
+- Telegram: [@kamikodi](https://t.me/kamikodi)
+- [LinkedIn:](https://www.linkedin.com/in/diana-stepanova-9a08a335b/)
