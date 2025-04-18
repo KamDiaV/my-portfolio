@@ -7,7 +7,7 @@
   &__title {
     @include font(
       $size: rem(32px),
-      $weight: $font-weight-bold
+      $weight: $font-weight-bold,
     );
     margin-bottom: rem(56px);
   }
@@ -189,4 +189,17 @@
   }
 }
 
+.cta-projects {
+  @include flex-center;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: rem(120px);
 
+  &__title {
+    @include font(
+      $size: rem(32px),
+      $weight: $font-weight-bold
+    );
+    margin-bottom: rem(32px);
+  }
+}

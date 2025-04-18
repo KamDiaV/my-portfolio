@@ -162,9 +162,6 @@ footer {
   display: block;
   color: #6C26B2;
 }
-.header__logo svg:hover {
-  color: #3E0789;
-}
 .header__nav {
   position: relative;
 }
@@ -209,6 +206,9 @@ footer {
   transition: all 0.3s ease;
 }
 .header__nav .nav__link:hover:after {
+  width: 100%;
+}
+.header__nav .nav__link:hover::after, .header__nav .nav__link[aria-current=page]::after {
   width: 100%;
 }
 .header__nav.is-open {
@@ -436,8 +436,8 @@ footer {
   justify-content: center;
 }
 .technologies__item img {
-  width: 5.5rem;
-  height: 5.5rem;
+  width: 5rem;
+  height: 5rem;
   display: block;
   transform-origin: center center;
 }
@@ -828,6 +828,23 @@ footer {
   line-height: normal;
   color: #151C3A;
   line-height: 1.5;
+}
+
+.cta-projects {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 7.5rem;
+}
+.cta-projects__title {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: normal;
+  color: #151C3A;
+  margin-bottom: 2rem;
 }
 
 .projects-detail {

@@ -36,17 +36,36 @@
         <button class="button">Contact Me</button>
       </div>
     </header>
+    <div class="contact-popup" id="contactPopup">
+      <div class="contact-popup__backdrop"></div>
+      <div class="contact-popup__content">
+        <button class="contact-popup__close" aria-label="Close popup">
+          <span></span>
+          <span></span>
+        </button>
+    
+        <p class="contact-popup__text">
+          Please write to me on
+          <a href="https://t.me/kamikodi" target="_blank" rel="noopener">
+            <svg class="contact-popup__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use xlink:href="./assets/images/sprite.svg#telegram"></use>
+            </svg>
+          </a>
+          — for faster reply!
+        </p>
+      </div>
+    </div>
 
     <main class="main">
 
       <section class="hero">
         <div class="hero__container hero__container--resume container">
           <h1 class="hero__title">Resume</h1>
-          <button class="button">Download
+          <a href="./assets/files/StepanovaD_frontend.pdf" download="StepanovaD_frontend.pdf" class="button">Download
             <svg>
               <use xlink:href="./assets/images/sprite.svg#download"></use>
             </svg>
-          </button>
+          </a>
         </div>
       </section>
 
@@ -139,6 +158,13 @@
         </div>
       </section>
 
+      <section class="cta-projects">
+        <h2 class="cta-projects__title">Projects</h2>
+        <a href="./projects.html" class="button cta-projects__link">
+          View Projects
+        </a>
+      </section>
+
     </main>
   </div>
   
@@ -177,6 +203,8 @@
   </footer>
   
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="./assets/js/set-active-nav.js"></script>
+  <script src="./assets/js/contact-popup.js"></script>
   <script src="./assets/js/burgermenu-animation.js"></script>
   <script src="./assets/js/scroll-top-button.js"></script>
 
