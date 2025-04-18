@@ -48,9 +48,6 @@ Welcome to my personal portfolio! This site showcases my skills, technologies I 
 ### Running Locally
   Just open index.html in your browser
 
-## 📁 Project Structure
-image.png
-
 ## 🎛 Usage & Interactivity
 
 ### Navigation & Burger Menu
