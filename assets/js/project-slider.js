@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(() => {
       let next = (current + 1) % slides.length;
       showSlide(next);
-    }, 5000);
+    }, 4000);
 
     // init
     showSlide(0);

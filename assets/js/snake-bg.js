@@ -1,13 +1,10 @@
 // snake-bg.js
 document.addEventListener('DOMContentLoaded', () => {
-  // ——————————————————————————————————————————————
   // 1) Получаем canvas и wrapper
-  // ——————————————————————————————————————————————
   const canvas  = document.getElementById('snake-bg');
   const wrapper = document.querySelector('.wrapper');
   if (!canvas || !wrapper) return;
 
-  // Абсолютное позиционирование относительно wrapper
   wrapper.style.position = 'relative';
   Object.assign(canvas.style, {
     position:      'absolute',
@@ -18,9 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   const ctx = canvas.getContext('2d');
 
-  // ——————————————————————————————————————————————
-  // 2) Подгоняем размеры canvas к wrapper
-  // ——————————————————————————————————————————————
+  // 2) Подгоняем размеры
   function resize() {
     const rect = wrapper.getBoundingClientRect();
     canvas.width  = rect.width;
@@ -29,98 +24,96 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', resize);
   resize();
 
-  // ——————————————————————————————————————————————
   // 3) Генерируем 100 точек‑пикселей 4×4
-  // ——————————————————————————————————————————————
   const POINT_SIZE = 4;
-  const points = [];
-  for (let i = 0; i < 100; i++) {
-    points.push({
-      x: Math.random() * (canvas.width  - POINT_SIZE),
-      y: Math.random() * (canvas.height - POINT_SIZE)
-    });
+  let points = [];
+  function genPoints() {
+    points = [];
+    for (let i = 0; i < 100; i++) {
+      points.push({
+        x: Math.random() * (canvas.width  - POINT_SIZE),
+        y: Math.random() * (canvas.height - POINT_SIZE)
+      });
+    }
   }
+  genPoints();
 
-  // ——————————————————————————————————————————————
   // 4) Класс «змейка»
-  // ——————————————————————————————————————————————
   class Snake {
     constructor() {
-      this.SIZE      = 4;                      // размер сегмента
-      this.maxLength = 4;                      // стартовая длина
-      this.speed     = 1.5;                    // скорость
-      this.angle     = Math.random() * Math.PI * 2;
+      this.thickness = 4;    // ширина сегмента в px
+      this.lengthPx  = 16;   // общая длина змейки в px
+      this.maxLength = this.lengthPx / this.thickness;
+      this.speed     = 1;    // скорость в px/кадр
 
-      // позиция логотипа (чтобы начать прямо под ним)
+      // стартовая позиция под логотипом
       const logo = document.querySelector('.header__logo');
-      if (logo) {
-        const r = logo.getBoundingClientRect();
-        // учесть смещение wrapper!
-        const wrapperRect = wrapper.getBoundingClientRect();
-        this.segments = [{
-          x: r.left - wrapperRect.left + (r.width - this.SIZE) / 2,
-          y: r.bottom - wrapperRect.top + 10  // 10px ниже логотипа
-        }];
-      } else {
-        // fallback: случайная точка
-        this.segments = [{
-          x: Math.random() * (canvas.width  - this.SIZE),
-          y: Math.random() * (canvas.height - this.SIZE)
-        }];
+      const r    = logo?.getBoundingClientRect();
+      const w    = wrapper.getBoundingClientRect();
+      const startX = r
+        ? r.left - w.left + (r.width - this.thickness) / 2
+        : Math.random()*(canvas.width  - this.thickness);
+      const startY = r
+        ? r.bottom - w.top + 10
+        : Math.random()*(canvas.height - this.thickness);
+
+      // создаём initial segments: вертикальный блок длиной 16px
+      this.segments = [];
+      for (let i = 0; i < this.maxLength; i++) {
+        this.segments.push({
+          x: startX,
+          y: startY + i * this.thickness
+        });
       }
     }
 
     step() {
       const head = this.segments[0];
-      const cx   = head.x + this.SIZE/2;
-      const cy   = head.y + this.SIZE/2;
+      const cx   = head.x + this.thickness/2;
+      const cy   = head.y + this.thickness/2;
 
-      // 4.1) Найти ближайшую точку
-      let nearest = null, bestDist2 = Infinity;
+      // найти ближайшую точку
+      let nearest = null, best = Infinity;
       for (const p of points) {
-        const dx = (p.x + POINT_SIZE/2) - cx;
-        const dy = (p.y + POINT_SIZE/2) - cy;
-        const d2 = dx*dx + dy*dy;
-        if (d2 < bestDist2) {
-          bestDist2 = d2;
-          nearest   = p;
-        }
+        const dx0 = (p.x + POINT_SIZE/2) - cx;
+        const dy0 = (p.y + POINT_SIZE/2) - cy;
+        const d2  = dx0*dx0 + dy0*dy0;
+        if (d2 < best) { best = d2; nearest = p; }
       }
 
-      // 4.2) Вектор движения
-      let dx, dy;
+      // вектор к цели
+      let dx = 0, dy = 0;
       if (nearest) {
         dx = nearest.x - head.x;
         dy = nearest.y - head.y;
-        const len = Math.hypot(dx, dy) || 1;
-        dx /= len; dy /= len;
-      } else {
-        dx = Math.cos(this.angle);
-        dy = Math.sin(this.angle);
       }
-      this.angle = Math.atan2(dy, dx);
 
-      // 4.3) Движение головы
-      head.x += dx * this.speed;
-      head.y += dy * this.speed;
+      // cardinalize: только вверх/вниз или влево/вправо
+      if (Math.abs(dx) > Math.abs(dy)) {
+        dx = Math.sign(dx);
+        dy = 0;
+      } else {
+        dx = 0;
+        dy = Math.sign(dy);
+      }
 
-      // 4.4) Тор (перенос через края)
-      head.x = (head.x + canvas.width)  % canvas.width;
-      head.y = (head.y + canvas.height) % canvas.height;
+      // переместить голову (с «тором» по краям)
+      head.x = (head.x + dx*this.speed + canvas.width ) % canvas.width;
+      head.y = (head.y + dy*this.speed + canvas.height) % canvas.height;
 
-      // 4.5) Обновление сегментов
+      // обновить segments
       this.segments.unshift({ x: head.x, y: head.y });
       if (this.segments.length > this.maxLength) {
         this.segments.pop();
       }
 
-      // 4.6) Съесть точку при столкновении головой
+      // съесть точку при столкновении головой
       for (let i = 0; i < points.length; i++) {
         const p = points[i];
         if (
-          p.x < head.x + this.SIZE &&
+          p.x < head.x + this.thickness &&
           p.x + POINT_SIZE > head.x &&
-          p.y < head.y + this.SIZE &&
+          p.y < head.y + this.thickness &&
           p.y + POINT_SIZE > head.y
         ) {
           points.splice(i, 1);
@@ -128,31 +121,32 @@ document.addEventListener('DOMContentLoaded', () => {
           break;
         }
       }
+
+      // если все точки съедены — перегенерировать
+      if (points.length === 0) genPoints();
     }
 
     draw() {
-      ctx.fillStyle = '#3E0789'; // secondary‑color
+      // змейка — более насыщенный цвет
+      ctx.fillStyle = 'rgba(62, 7, 137, 0.8)';
       for (const seg of this.segments) {
-        ctx.fillRect(seg.x, seg.y, this.SIZE, this.SIZE);
+        ctx.fillRect(seg.x, seg.y, this.thickness, this.thickness);
       }
     }
   }
 
   const snake = new Snake();
 
-  // ——————————————————————————————————————————————
-  // 5) Основной анимационный цикл
-  // ——————————————————————————————————————————————
+  // 5) Цикл анимации
   (function loop() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // 5.1) Точки
+    // рисуем точки полупрозрачным цветом
     ctx.fillStyle = 'rgba(62, 7, 137, 0.5)';
     for (const p of points) {
       ctx.fillRect(p.x, p.y, POINT_SIZE, POINT_SIZE);
     }
 
-    // 5.2) Шаг + отрисовка змейки
     snake.step();
     snake.draw();
 

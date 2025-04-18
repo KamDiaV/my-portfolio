@@ -37,6 +37,26 @@
         <button class="button">Contact Me</button>
       </div>
     </header>
+    <div class="contact-popup" id="contactPopup">
+      <div class="contact-popup__backdrop"></div>
+      <div class="contact-popup__content">
+        <button class="contact-popup__close" aria-label="Close popup">
+          <span></span>
+          <span></span>
+        </button>
+    
+        <p class="contact-popup__text">
+          Please write to me on
+          <a href="https://t.me/kamikodi" target="_blank" rel="noopener">
+            <svg class="contact-popup__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <use xlink:href="./assets/images/sprite.svg#telegram"></use>
+            </svg>
+          </a>
+          — for faster reply!
+        </p>
+      </div>
+    </div>
+    
 
     <main class="main">
       <section class="hero">
@@ -45,7 +65,7 @@
           <p class="hero__subtitle">Hi! I'm Diana, a junior frontend developer.</p>
           <p class="hero__description">
             I'm passionate about creating modern and user-friendly interfaces using HTML, CSS, and JavaScript.
-            <br>I love paying attention to detail, and I'm always eager <br>to learn new technologies and improve my technologies.
+            <br>I love paying attention to detail, and I’m always eager to learn new technologies and refine my skills.
           </p>
         </div>
       </section>
@@ -97,7 +117,7 @@
               
               <ul class="project-card__tech-list">
                 <li class="project-card__tech">HTML</li>
-                <li class="project-card__tech">CSS</li>
+                <li class="project-card__tech">SCSS</li>
                 <li class="project-card__tech">JS</li>
                 <li class="project-card__tech">Figma</li>
               </ul>
@@ -127,6 +147,7 @@
                 <li class="project-card__tech">CSS</li>
                 <li class="project-card__tech">JS</li>
                 <li class="project-card__tech">Figma</li>
+                <li class="project-card__tech">Netlify</li>
               </ul>
             
               <div class="project-card__links">
@@ -147,7 +168,7 @@
 
             <article class="project-card" data-project="vesna" onclick="selectProject('vesna')">
               <h2 class="project-card__title">Vesna</h2>
-              <p class="project-card__description">A multi-page website for landscape design company Vesna.</p>
+              <p class="project-card__description">A multi-page website for landscape design.</p>
             
               <ul class="project-card__tech-list">
                 <li class="project-card__tech">HTML</li>
@@ -220,6 +241,7 @@
   <script src="./assets/js/project-selector.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
   <script src="./assets/js/burgermenu-animation.js"></script>
+  <script src="./assets/js/contact-popup.js"></script>
   <script src="./assets/js/technologies-animation.js"></script>
   <script src="./assets/js/scroll-top-button.js"></script>
   <script src="./assets/js/snake-bg.js"></script>
