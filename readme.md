@@ -1,21 +1,6 @@
 # Diana St. — Frontend Developer Portfolio
 
-Welcome to my personal portfolio! This static site showcases my skills, technologies I work with, and a selection of my projects. It’s built with plain HTML, SCSS (compiled to CSS), and vanilla JavaScript, following the BEM methodology for maintainable, modular styles.
-
----
-
-## 📑 Table of Contents
-
-- [Features](#features)  
-- [Technologies](#technologies)  
-- [Getting Started](#getting-started)  
-  - [Prerequisites](#prerequisites)  
-  - [Installation](#installation)  
-  - [Running Locally](#running-locally)  
-- [Project Structure](#project-structure)  
-- [Usage & Interactivity](#usage--interactivity)  
-- [BEM Methodology](#bem-methodology)  
-- [Author](#author)  
+Welcome to my personal portfolio! This site showcases my skills, technologies I work with, and a selection of my projects. It’s built with plain HTML, SCSS (compiled to CSS), and vanilla JavaScript, following the BEM methodology for maintainable, modular styles.
 
 ---
 
