@@ -1214,9 +1214,9 @@ footer {
   grid-template-rows: 18.75rem 5rem;
   row-gap: 1.5rem;
   width: 100%;
-  max-width: 40.25rem;
+  max-width: 50rem;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .project-detail .slider {
     grid-template-rows: 18.75rem;
   }
@@ -1226,8 +1226,10 @@ footer {
   overflow: hidden;
   border-radius: 16px;
   box-shadow: 0 2px 8px rgba(231, 231, 231, 0.5);
+  width: 100%;
+  height: auto;
 }
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 1024px) {
   .project-detail .slider__main {
     box-shadow: none;
   }

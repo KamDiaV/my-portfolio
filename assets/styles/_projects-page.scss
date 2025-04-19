@@ -59,9 +59,9 @@
     grid-template-rows: rem(300px) rem(80px);
     row-gap: rem(24px);
     width: 100%;
-    max-width: rem(644px);
+    max-width: rem(800px);
 
-    @include tablets {
+    @include tablets-big {
       grid-template-rows: rem(300px);
     }
 
@@ -70,8 +70,10 @@
       overflow: hidden;
       border-radius: 16px;
       box-shadow: 0 2px 8px rgba($grey, 0.5);
+      width: 100%;
+      height: auto;
 
-      @include phones {
+      @include tablets-big {
         box-shadow: none;
       }
     }
