@@ -5,7 +5,7 @@
 
   &__list {
     display: grid;
-    gap: rem(80px);
+    gap: rem(120px);
 
     @include phones {
       grid-template-columns: repeat(auto-fit, minmax(rem(300px), 1fr));
@@ -43,7 +43,7 @@
 
   @include phones {
     padding: 0;
-    row-gap: rem(24px);
+    row-gap: 0;
     box-shadow: none;
   }
 
@@ -125,6 +125,10 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+
+    @include phones {
+      margin-bottom: rem(32px);
+    }
   }
 
   &__tech {
@@ -149,7 +153,7 @@
       margin-bottom: rem(8px);
       position: relative;
       padding-left: rem(24px);
-  
+
       &::before {
         content: "";
         position: absolute;

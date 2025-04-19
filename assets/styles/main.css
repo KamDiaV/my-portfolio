@@ -1161,7 +1161,7 @@ footer {
 }
 .projects-detail__list {
   display: grid;
-  gap: 5rem;
+  gap: 7.5rem;
 }
 @media screen and (max-width: 440px) {
   .projects-detail__list {
@@ -1195,7 +1195,7 @@ footer {
 @media screen and (max-width: 440px) {
   .project-detail {
     padding: 0;
-    row-gap: 1.5rem;
+    row-gap: 0;
     box-shadow: none;
   }
 }
@@ -1278,6 +1278,11 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+@media screen and (max-width: 440px) {
+  .project-detail__body {
+    margin-bottom: 2rem;
+  }
 }
 .project-detail__tech {
   font-family: "Roboto", sans-serif;
