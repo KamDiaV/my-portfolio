@@ -648,7 +648,7 @@ footer {
   font-weight: 400;
   line-height: normal;
   color: #151C3A;
-  min-height: 3rem;
+  min-height: 2.5rem;
   margin-bottom: 1rem;
 }
 @media screen and (max-width: 440px) {
