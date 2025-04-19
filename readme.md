@@ -7,6 +7,8 @@ Welcome to my personal portfolio! This site showcases my skills, technologies I 
 ## ✨ Features
 
 - **Responsive Layout** — works across desktop and mobile  
+- **CSS Grid & Flexbox** — for flexible layout  
+- **SVG Sprite** — icons served from a single optimized sprite 
 - **Burger‑menu** — mobile navigation with animated overlay  
 - **Technologies Animation** — icons fade/slide into view  
 - **Projects Slider** — automatic image carousel with thumbnails  
@@ -20,6 +22,8 @@ Welcome to my personal portfolio! This site showcases my skills, technologies I 
 ## 🛠 Technologies
 
 - **HTML5** & **SCSS** (compiled to CSS)  
+- **CSS Grid** & **Flexbox** for layout  
+- **SVG Sprite** for icons 
 - **Vanilla JavaScript** (ES6+)  
 - **Anime.js** for certain animations  
 
