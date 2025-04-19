@@ -82,7 +82,7 @@
 
   &__description {
     @include font();
-    min-height: rem(32px);
+    min-height: rem(40px);
     margin-bottom: rem(16px);
 
     @include phones {
