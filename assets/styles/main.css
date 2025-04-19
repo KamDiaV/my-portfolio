@@ -648,7 +648,7 @@ footer {
   font-weight: 400;
   line-height: normal;
   color: #151C3A;
-  min-height: 2rem;
+  min-height: 3rem;
   margin-bottom: 1rem;
 }
 @media screen and (max-width: 440px) {
@@ -1185,7 +1185,7 @@ footer {
   justify-items: center;
   padding: 2rem;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .project-detail {
     grid-template-columns: 1fr;
     grid-template-areas: "title" "slider" "body" "links";

@@ -1,3 +1,9 @@
+@mixin tablets-big {
+  @media screen and (max-width: $tablets-big) {
+    @content;
+  }  
+}
+
 @mixin tablets {
   @media screen and (max-width: $tablets) {
     @content;
