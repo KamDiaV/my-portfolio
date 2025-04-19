@@ -2,18 +2,15 @@
 
   &__container {
     @include flex-center;
-    @include padding-1920;
     flex-direction: column;
     text-align: center;
     margin-bottom: rem(200px);
 
     @include tablets {
-      @include padding-768;
       margin-bottom: rem(120px);
     }
 
     @include phones {
-      @include padding-440;
       margin-bottom: rem(88px);
     }
   }

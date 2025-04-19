@@ -2,7 +2,6 @@
 
   &__container {
       @include flex-center;
-      @include padding-1920;
       justify-content: space-between;
       min-height: 80px;
     }
@@ -138,10 +137,6 @@
 @include tablets {
   .header {
 
-    &__container {
-      @include padding-768;
-    }
-
     &__nav,
     .button {
       display: none;
@@ -159,13 +154,5 @@
 
   .is-open { 
     display: block; 
-  }
-}
-
-@include phones {
-  .header {
-    &__container {
-      @include padding-440;
-    }
   }
 }

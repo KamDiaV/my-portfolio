@@ -79,3 +79,9 @@ footer {
     @include padding-440; 
   }
 }
+
+@include phones-mini {
+  .wrapper {
+    @include padding-320; 
+  }
+}

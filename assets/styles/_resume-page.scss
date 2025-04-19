@@ -1,17 +1,11 @@
 .about {
   @include flex-center;
-  @include padding-1920;
   flex-direction: column;
   text-align: center;
   margin-bottom: rem(120px);
 
-  @include tablets {
-    @include padding-768;
-  }
-
   @include phones {
-    @include padding-440;
-    margin-bottom: rem(80px);
+    margin-bottom: rem(40px);
   }
 
   &__title {
@@ -135,7 +129,7 @@
   overflow: hidden;
 
   @include phones {
-    margin-bottom: rem(80px);
+    margin-bottom: rem(40px);
   }
 
   &__img {
@@ -149,17 +143,11 @@
 
 .skills {
   @include flex-center;
-  @include padding-1920;
   flex-direction: column;
   text-align: center;
   margin-bottom: rem(120px);
 
-  @include tablets {
-    @include padding-768;
-  }
-
   @include phones {
-    @include padding-440;
     margin-bottom: rem(80px);
   }
 
@@ -226,17 +214,11 @@
 
 .education {
   @include flex-center;
-  @include padding-1920;
   flex-direction: column;
   text-align: center;
   margin-bottom: rem(120px);
 
-  @include tablets {
-    @include padding-768;
-  }
-
   @include phones {
-    @include padding-440;
     margin-bottom: rem(80px);
   }
 
@@ -305,17 +287,11 @@
 
 .cta-projects {
   @include flex-center;
-  @include padding-1920;
   flex-direction: column;
   text-align: center;
   margin-bottom: rem(120px);
 
-  @include tablets {
-    @include padding-768;
-  }
-
   @include phones {
-    @include padding-440;
     margin-bottom: rem(80px);
   }
 

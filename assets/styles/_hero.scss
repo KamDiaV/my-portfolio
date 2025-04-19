@@ -2,20 +2,17 @@
 
   &__container {
     @include flex-center;
-    @include padding-1920;
     flex-direction: column;
     text-align: center;
     margin-top: rem(88px);
     margin-bottom: rem(200px);
 
     @include tablets {
-      @include padding-768;
       margin-top: rem(80px);
       margin-bottom: rem(120px);
     }
 
     @include phones {
-      @include padding-440;
       margin-top: rem(64px);
       margin-bottom: rem(88px);
     }
@@ -67,12 +64,10 @@
   margin-bottom: rem(120px);
 
   @include tablets {
-    @include padding-768;
     margin-top: rem(80px);
   }
 
   @include phones {
-    @include padding-440;
     margin-top: rem(64px);
   }
 
@@ -85,13 +80,11 @@
   margin-bottom: rem(40px);
 
   @include tablets {
-    @include padding-768;
     margin-top: rem(80px);
     margin-bottom: rem(32px);
   }
 
   @include phones {
-    @include padding-440;
     margin-top: rem(64px);
   }
 

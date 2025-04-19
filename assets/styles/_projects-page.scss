@@ -2,15 +2,6 @@
   @include flex-center;
   flex-direction: column;
   margin-bottom: rem(120px);
-  @include padding-1920;
-
-  @include tablets {
-    @include padding-768;
-  }
-
-  @include phones {
-    @include padding-320;
-  }
 
   &__list {
     display: grid;
@@ -18,7 +9,6 @@
 
     @include phones {
       grid-template-columns: repeat(auto-fit, minmax(rem(300px), 1fr));
-      gap: rem(40px);
     }
   }
 }
