@@ -2,10 +2,27 @@
 
   &__container {
     @include flex-center;
+    @include padding-1920;
     flex-direction: column;
     text-align: center;
     margin-top: rem(88px);
     margin-bottom: rem(200px);
+
+    @include tablets {
+      @include padding-768;
+      margin-top: rem(80px);
+      margin-bottom: rem(120px);
+    }
+
+    @include phones {
+      @include padding-440;
+      margin-top: rem(64px);
+      margin-bottom: rem(88px);
+    }
+
+    @include phones-mini {
+      margin-top: rem(56px);
+    }
   }
 
   &__title {
@@ -14,6 +31,13 @@
       $weight: $font-weight-bold,
     );
     margin-bottom: rem(32px);
+
+    @include phones {
+      @include font(
+        $size: rem(40px),
+        $weight: $font-weight-bold
+      );
+    }
   }
 
   &__subtitle {
@@ -29,13 +53,49 @@
       $line-height: 1.5
     );
     max-width: rem(600px);
+
+    @include phones {
+      @include font(
+        $size: rem(16px),
+        $line-height: 1.5
+      );
+    }
   }
 }
 
 .hero__container--resume {
   margin-bottom: rem(120px);
+
+  @include tablets {
+    @include padding-768;
+    margin-top: rem(80px);
+  }
+
+  @include phones {
+    @include padding-440;
+    margin-top: rem(64px);
+  }
+
+  @include phones-mini {
+    margin-top: rem(56px);
+  }
 }
 
 .hero__container--projects {
-  margin-bottom: rem(64px);
+  margin-bottom: rem(40px);
+
+  @include tablets {
+    @include padding-768;
+    margin-top: rem(80px);
+    margin-bottom: rem(32px);
+  }
+
+  @include phones {
+    @include padding-440;
+    margin-top: rem(64px);
+  }
+
+  @include phones-mini {
+    margin-top: rem(56px);
+  }
 }

@@ -2,9 +2,20 @@
 
   &__container {
     @include flex-center;
+    @include padding-1920;
     flex-direction: column;
     text-align: center;
     margin-bottom: rem(200px);
+
+    @include tablets {
+      @include padding-768;
+      margin-bottom: rem(120px);
+    }
+
+    @include phones {
+      @include padding-440;
+      margin-bottom: rem(88px);
+    }
   }
 
   &__title {
@@ -13,6 +24,13 @@
       $weight: $font-weight-bold,
     );
     margin-bottom: rem(32px);
+
+    @include phones {
+      @include font(
+        $size: rem(32px),
+        $weight: $font-weight-bold,
+    );
+    }
   }
 
   &__list {
@@ -20,6 +38,10 @@
     flex-wrap: wrap;
     gap: rem(40px);
     justify-content: center;
+
+    @include phones {
+      gap: rem(24px);
+    }
   }
 
   &__item {
@@ -32,6 +54,16 @@
       height: rem(80px);
       display: block;
       transform-origin: center center;
+
+      @include tablets {
+        width: rem(64px);
+        height: rem(64px);
+      }
+
+      @include phones {
+        width: rem(56px);
+        height: rem(56px);
+      }
     }
   }
 }

@@ -2,6 +2,7 @@
 
   &__container {
       @include flex-center;
+      @include padding-1920;
       justify-content: space-between;
       min-height: 80px;
     }
@@ -30,7 +31,7 @@
       transform-origin: top right;
       transform: scale(0);
       z-index: 0;
-      border-bottom-left-radius: rem(16px);
+      border-bottom-left-radius: 16px;
     }
 
     .nav__list {
@@ -55,7 +56,7 @@
         width: 0;            
         height: 2px;         
         background-color: $primary-color;
-        @include transition(all, 0.3s, ease); 
+        transition: all, 0.3s, ease; 
       }
     
       &:hover:after {
@@ -112,7 +113,7 @@
     height: 2px;
     margin: 6px 0;
     background-color: $primary-color;
-    @include transition(all, 0.5s, ease);
+    transition: all, 0.5s, ease;
   }
 
   &.is-open {
@@ -134,8 +135,13 @@
   }
 }
 
-@include phones {
+@include tablets {
   .header {
+
+    &__container {
+      @include padding-768;
+    }
+
     &__nav,
     .button {
       display: none;
@@ -153,5 +159,13 @@
 
   .is-open { 
     display: block; 
+  }
+}
+
+@include phones {
+  .header {
+    &__container {
+      @include padding-440;
+    }
   }
 }

@@ -2,9 +2,20 @@
 
   &__container {
     @include flex-center;
+    @include padding-1920;
     flex-direction: column;
     text-align: center;
     margin-bottom: rem(200px);
+
+    @include tablets {
+      @include padding-768;
+      margin-bottom: rem(120px);
+    }
+
+    @include phones {
+      @include padding-440;
+      margin-bottom: rem(88px);
+    }
   }
 
   &__title {
@@ -13,6 +24,13 @@
       $weight: $font-weight-bold,
     );
     margin-bottom: rem(32px);
+
+    @include phones {
+      @include font(
+      $size: rem(32px),
+      $weight: $font-weight-bold,
+    );
+    }
   }
 
   &__subtitle {
@@ -20,13 +38,22 @@
       $size: rem(24px)
     );
     margin-bottom: rem(32px);
+
+    @include phones {
+      @include font();
+    }
   }
+
+  
 
   &__cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(rem(280px), 1fr));
     gap: rem(32px);
-    width: 100%;
+    max-width: 100%;
+    margin-bottom: rem(32px);
+    align-items: stretch;
+    justify-content: center;
   }
 }
 
@@ -37,11 +64,12 @@
   padding: rem(24px);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: rem(32px);
   cursor: pointer;
+  height: 100%;
+  box-sizing: border-box; 
 
   &:hover {
     transform: translateY(-4px);
@@ -57,7 +85,12 @@
 
   &__description {
     @include font();
+    min-height: rem(32px);
     margin-bottom: rem(16px);
+
+    @include phones {
+      min-height: 0;
+    }
   }
 
   &__tech-list {
@@ -75,6 +108,7 @@
   }
 
   &__links {
+    margin-top: auto;
     display: flex;
     justify-content: space-between;
     gap: rem(16px);
@@ -107,7 +141,7 @@
         width: 0;            
         height: 2px;         
         background-color: $secondary-color;
-        @include transition(all, 0.3s, ease); 
+        transition: all, 0.3s, ease; 
       }
     
       &:hover:after {
@@ -131,7 +165,7 @@
       width: 0;            
       height: 2px;         
       background-color: $accent-color;
-      @include transition(all, 0.3s, ease); 
+      transition: all, 0.3s, ease; 
     }
   
     &:hover:after {

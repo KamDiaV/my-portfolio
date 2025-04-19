@@ -4,14 +4,6 @@
   justify-content: center;
 }
 
-@mixin transition($property, $time, $timing-function: ease-in-out) {
-  transition: $property $time $timing-function;
-}
-
-@mixin transition($props, $duration: 0.4s, $easing: ease) {
-  transition: $props $duration $easing;
-}
-
 @mixin font(
   $family: $font-family-base,
   $size: $font-size-base,

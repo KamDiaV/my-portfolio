@@ -1,8 +1,18 @@
 .about {
   @include flex-center;
+  @include padding-1920;
   flex-direction: column;
   text-align: center;
   margin-bottom: rem(120px);
+
+  @include tablets {
+    @include padding-768;
+  }
+
+  @include phones {
+    @include padding-440;
+    margin-bottom: rem(80px);
+  }
 
   &__title {
     @include font(
@@ -10,6 +20,14 @@
       $weight: $font-weight-bold,
     );
     margin-bottom: rem(56px);
+
+    @include phones {
+      @include font(
+      $size: rem(24px),
+      $weight: $font-weight-bold,
+    );
+    margin-bottom: rem(32px);
+    }
   }
 
   &__profile {
@@ -19,11 +37,21 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: rem(56px);
+
+    @include phones {
+      gap: rem(24px);
+      margin-bottom: rem(32px);
+    }
   }
 
   &__photo {
     width: rem(224px);
     height: rem(224px);
+
+    @include phones {
+      width: rem(200px);
+      height: rem(200px);
+    }
   }
 
   &__info {
@@ -31,6 +59,11 @@
     flex-direction: column;
     align-items: flex-start;
     gap: rem(16px);
+
+    @include phones {
+      align-items: center;
+      gap: rem(8px);
+    }
   }
 
   &__name {
@@ -49,6 +82,10 @@
     display: flex;          
     gap: rem(40px);         
     align-items: center;
+
+    @include phones {
+      gap: rem(32px); 
+    }
   }
 
   &__contact-link {
@@ -79,6 +116,13 @@
     max-width: rem(800px);
     text-align: justify;
     line-height: 1.5;
+
+    @include phones {
+      @include font(
+      $size: rem(16px)
+    );
+    line-height: 1.6;
+    }
   }
 }
 
@@ -89,6 +133,10 @@
   transform: translateX(-50%);
   margin-bottom: rem(120px);
   overflow: hidden;
+
+  @include phones {
+    margin-bottom: rem(80px);
+  }
 
   &__img {
     display: block;
@@ -101,9 +149,19 @@
 
 .skills {
   @include flex-center;
+  @include padding-1920;
   flex-direction: column;
   text-align: center;
   margin-bottom: rem(120px);
+
+  @include tablets {
+    @include padding-768;
+  }
+
+  @include phones {
+    @include padding-440;
+    margin-bottom: rem(80px);
+  }
 
   &__title {
     @include font(
@@ -111,6 +169,13 @@
       $weight: $font-weight-bold
     );
     margin-bottom: rem(32px);
+
+    @include phones {
+      @include font(
+      $size: rem(24px),
+      $weight: $font-weight-bold
+    );
+    }
   }
 
   &__list {
@@ -125,6 +190,14 @@
     margin-bottom: rem(24px);
     position: relative;
     padding-left: 40px;
+
+    @include phones {
+      @include font(
+      $size: rem(16px)
+    );
+      margin-bottom: rem(16px);
+      padding-left: 24px;
+    }
 
     &::before {
       content: "";
@@ -142,15 +215,30 @@
         </svg>");
       background-repeat: no-repeat;
       background-size: contain;
+
+      @include phones {
+        width: rem(16px);
+        height: rem(16px);
+      }
     }
   }
 }
 
 .education {
   @include flex-center;
+  @include padding-1920;
   flex-direction: column;
   text-align: center;
-  margin-bottom: rem(72px);
+  margin-bottom: rem(120px);
+
+  @include tablets {
+    @include padding-768;
+  }
+
+  @include phones {
+    @include padding-440;
+    margin-bottom: rem(80px);
+  }
 
   &__title {
     @include font(
@@ -158,11 +246,23 @@
       $weight: $font-weight-bold
     );
     margin-bottom: rem(32px);
+
+    @include phones {
+      @include font(
+        $size: rem(24px),
+        $weight: $font-weight-bold
+      );
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: rem(48px);
   }
 
   &__item {
     max-width: rem(800px);
-    margin-bottom: rem(48px);
     text-align: center;
   }
 
@@ -172,6 +272,13 @@
       $weight: $font-weight-bold
     );
     margin-bottom: rem(16px);
+
+    @include phones {
+      @include font(
+        $size: rem(16px),
+        $weight: $font-weight-bold
+      );
+    }
   }
 
   &__school {
@@ -179,6 +286,13 @@
       $size: rem(24px)
     );
     margin-bottom: rem(8px);
+
+    @include phones {
+      @include font(
+        $size: rem(16px),
+        $weight: $font-weight-bold
+      );
+    }
   }
 
   &__period {
@@ -191,9 +305,19 @@
 
 .cta-projects {
   @include flex-center;
+  @include padding-1920;
   flex-direction: column;
   text-align: center;
   margin-bottom: rem(120px);
+
+  @include tablets {
+    @include padding-768;
+  }
+
+  @include phones {
+    @include padding-440;
+    margin-bottom: rem(80px);
+  }
 
   &__title {
     @include font(
@@ -201,5 +325,12 @@
       $weight: $font-weight-bold
     );
     margin-bottom: rem(32px);
+
+    @include phones {
+      @include font(
+        $size: rem(24px),
+        $weight: $font-weight-bold
+      );
+    }
   }
 }
