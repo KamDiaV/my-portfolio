@@ -9,7 +9,7 @@
   }
 
   @include phones {
-    @include padding-440;
+    @include padding-320;
   }
 
   &__list {
@@ -52,12 +52,9 @@
   }
 
   @include phones {
-    padding: rem(16px);
+    padding: 0;
     row-gap: rem(24px);
-  }
-
-  @include phones-mini {
-    padding: rem(8px);
+    box-shadow: none;
   }
 
   &__title {
@@ -83,6 +80,10 @@
       overflow: hidden;
       border-radius: 16px;
       box-shadow: 0 2px 8px rgba($grey, 0.5);
+
+      @include phones {
+        box-shadow: none;
+      }
     }
 
     &__slide {
@@ -149,6 +150,7 @@
       @include font();
       margin-bottom: 16px;
       line-height: 1.5;
+      text-align: justify;
     }
   
     &__feature {

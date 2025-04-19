@@ -1241,8 +1241,8 @@ footer {
 }
 @media screen and (max-width: 440px) {
   .projects-detail {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 }
 .projects-detail__list {
@@ -1281,13 +1281,9 @@ footer {
 }
 @media screen and (max-width: 440px) {
   .project-detail {
-    padding: 1rem;
+    padding: 0;
     row-gap: 1.5rem;
-  }
-}
-@media screen and (max-width: 320px) {
-  .project-detail {
-    padding: 0.5rem;
+    box-shadow: none;
   }
 }
 .project-detail__title {
@@ -1317,6 +1313,11 @@ footer {
   overflow: hidden;
   border-radius: 16px;
   box-shadow: 0 2px 8px rgba(231, 231, 231, 0.5);
+}
+@media screen and (max-width: 440px) {
+  .project-detail .slider__main {
+    box-shadow: none;
+  }
 }
 .project-detail .slider__slide {
   position: absolute;
@@ -1384,6 +1385,7 @@ footer {
   color: #151C3A;
   margin-bottom: 16px;
   line-height: 1.5;
+  text-align: justify;
 }
 .project-detail__feature {
   font-family: "Roboto", sans-serif;
