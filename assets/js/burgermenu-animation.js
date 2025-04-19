@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const opening = !nav.classList.contains('is-open');
 
     if (opening) {
-      // Открытие
       nav.classList.add('is-open');
       btn.classList.add('is-open');
       list.style.display = 'none';
@@ -23,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
         easing: 'easeOutQuad'
       });
 
-      // Появление списка через 400ms
       setTimeout(() => {
         list.style.display = 'flex';
         anime({
@@ -34,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }, 400);
     } else {
-      // Закрытие списка: сразу анимируем opacity и прячем через 100ms
       anime({
         targets: list,
         opacity: [1, 0],
@@ -46,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // Анимация оверлея
       overlay.style.transformOrigin = 'top right';
       anime({
         targets: overlay,
@@ -62,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Закрытие при клике вне
   document.addEventListener('click', e => {
     if (
       nav.classList.contains('is-open') &&
@@ -73,7 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Функция для сброса инлайновых стилей списка
   function resetListStyles() {
     if (!nav.classList.contains('is-open')) {
       list.style.display = '';
@@ -81,11 +75,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Сбрасываем после закрытия
   btn.addEventListener('click', () => {
     if (!nav.classList.contains('is-open')) resetListStyles();
   });
 
-  // Сбрасываем при ресайзе (смене адаптива)
   window.addEventListener('resize', resetListStyles);
 });

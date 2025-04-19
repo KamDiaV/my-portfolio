@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const popup     = document.getElementById('contactPopup');
-  const openBtn   = document.querySelector('.button');          // кнопка "Contact Me"
+  const openBtn   = document.querySelector('.button');          
   const closeBtn  = popup.querySelector('.contact-popup__close');
   const backdrop  = popup.querySelector('.contact-popup__backdrop');
 

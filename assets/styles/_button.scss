@@ -45,7 +45,7 @@
   opacity: 0;
   visibility: hidden;
   margin-bottom: 32px;
-  transform: translateY(20px);      // стартовая позиция ниже
+  transform: translateY(20px);     
   transition:
     opacity 0.8s ease,
     visibility 0.8s ease,
@@ -71,7 +71,7 @@
   &.visible {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);        // поднимаем в исходную
+    transform: translateY(0);       
   }
 }
 

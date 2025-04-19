@@ -1,4 +1,3 @@
-// snake-bg.js
 document.addEventListener('DOMContentLoaded', () => {
   // 1) Получаем canvas и wrapper
   const canvas  = document.getElementById('snake-bg');
@@ -41,10 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // 4) Класс «змейка»
   class Snake {
     constructor() {
-      this.thickness = 4;    // ширина сегмента в px
-      this.lengthPx  = 16;   // общая длина змейки в px
+      this.thickness = 4;    
+      this.lengthPx  = 16;   
       this.maxLength = this.lengthPx / this.thickness;
-      this.speed     = 1;    // скорость в px/кадр
+      this.speed     = 1;    
 
       // стартовая позиция под логотипом
       const logo = document.querySelector('.header__logo');
@@ -57,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ? r.bottom - w.top + 10
         : Math.random()*(canvas.height - this.thickness);
 
-      // создаём initial segments: вертикальный блок длиной 16px
       this.segments = [];
       for (let i = 0; i < this.maxLength; i++) {
         this.segments.push({
@@ -88,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
         dy = nearest.y - head.y;
       }
 
-      // cardinalize: только вверх/вниз или влево/вправо
       if (Math.abs(dx) > Math.abs(dy)) {
         dx = Math.sign(dx);
         dy = 0;
@@ -97,17 +94,14 @@ document.addEventListener('DOMContentLoaded', () => {
         dy = Math.sign(dy);
       }
 
-      // переместить голову (с «тором» по краям)
       head.x = (head.x + dx*this.speed + canvas.width ) % canvas.width;
       head.y = (head.y + dy*this.speed + canvas.height) % canvas.height;
 
-      // обновить segments
       this.segments.unshift({ x: head.x, y: head.y });
       if (this.segments.length > this.maxLength) {
         this.segments.pop();
       }
 
-      // съесть точку при столкновении головой
       for (let i = 0; i < points.length; i++) {
         const p = points[i];
         if (
@@ -122,12 +116,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // если все точки съедены — перегенерировать
       if (points.length === 0) genPoints();
     }
 
     draw() {
-      // змейка — более насыщенный цвет
       ctx.fillStyle = 'rgba(62, 7, 137, 0.8)';
       for (const seg of this.segments) {
         ctx.fillRect(seg.x, seg.y, this.thickness, this.thickness);
@@ -141,7 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
   (function loop() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // рисуем точки полупрозрачным цветом
     ctx.fillStyle = 'rgba(62, 7, 137, 0.5)';
     for (const p of points) {
       ctx.fillRect(p.x, p.y, POINT_SIZE, POINT_SIZE);

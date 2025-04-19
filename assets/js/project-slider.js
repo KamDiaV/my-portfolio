@@ -1,4 +1,3 @@
-// project‑slider.js
 document.addEventListener('DOMContentLoaded', () => {
   const sliders = document.querySelectorAll('.slider');
 
@@ -29,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
       interval = setInterval(nextSlide, 4000);
     }
 
-    // клик по миниатюре
     thumbs.forEach(thumb => {
       thumb.addEventListener('click', e => {
         const idx = parseInt(thumb.dataset.index, 10);
@@ -54,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
     slider.addEventListener('mouseenter', () => clearInterval(interval));
     slider.addEventListener('mouseleave', resetInterval);
 
-    // стартовая инициализация
     showSlide(0);
     resetInterval();
   });
