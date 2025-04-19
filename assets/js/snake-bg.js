@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', resize);
   resize();
 
-  // 3) Генерация 100 точек‑пикселей серого цвета 4×4
+  // 3) Генерация 100 серых точек‑пикселей 4×4
   const POINT_SIZE = 4;
   let points = [];
   function genPoints() {
@@ -37,13 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   genPoints();
 
-  // 4) Класс змейки
+  // 4) Класс змейки с учётом препятствий (segments другой змеи)
   class Snake {
-    /**
-     * @param {Object} opts
-     * @param {string} opts.color — цвет змеи
-     * @param {'logo'|'bottom-right'} opts.start — точка старта
-     */
     constructor({ color = '#6C26B2', start = 'bottom-right' } = {}) {
       this.color     = color;
       this.thickness = 4;
@@ -54,51 +49,45 @@ document.addEventListener('DOMContentLoaded', () => {
       // стартовая позиция
       const logoRect    = document.querySelector('.header__logo')?.getBoundingClientRect();
       const wrapperRect = wrapper.getBoundingClientRect();
-
       let startX, startY;
 
-
       if (start === 'bottom-right') {
-        const W = wrapper.clientWidth;
-        const H = wrapper.clientHeight;
-        const M = 10;
-        const t = this.thickness;
+        const W = wrapper.clientWidth, H = wrapper.clientHeight, M = 10, t = this.thickness;
         startX = W - t - M;
         startY = H - t - M;
       } else if (start === 'logo' && logoRect) {
         startX = logoRect.left   - wrapperRect.left + (logoRect.width  - this.thickness) / 2;
         startY = logoRect.bottom - wrapperRect.top  + 10;
       } else {
-        // fallback
         startX = Math.random() * (canvas.width  - this.thickness);
         startY = Math.random() * (canvas.height - this.thickness);
       }
 
-      // создаём начальные сегменты
       this.segments = [];
       for (let i = 0; i < this.maxLength; i++) {
-        this.segments.push({
-          x: startX,
-          y: startY + i * this.thickness
-        });
+        this.segments.push({ x: startX, y: startY + i * this.thickness });
       }
     }
 
-    step() {
+    /**
+     * Один шаг змейки
+     * @param {Array<{x:number,y:number}>} obstacles — сегменты другой змеи
+     */
+    step(obstacles = []) {
       const head = this.segments[0];
-      const cx   = head.x + this.thickness / 2;
-      const cy   = head.y + this.thickness / 2;
-
-      // найти ближайшую точку
+      const cx   = head.x + this.thickness/2;
+      const cy   = head.y + this.thickness/2;
+    
+      // 1) Ближайшая «еда»
       let nearest = null, best = Infinity;
       for (const p of points) {
-        const dx = (p.x + POINT_SIZE/2) - cx;
-        const dy = (p.y + POINT_SIZE/2) - cy;
-        const d2 = dx*dx + dy*dy;
+        const dx0 = (p.x + POINT_SIZE/2) - cx;
+        const dy0 = (p.y + POINT_SIZE/2) - cy;
+        const d2  = dx0*dx0 + dy0*dy0;
         if (d2 < best) { best = d2; nearest = p; }
       }
-
-      // вектор движения по 4 направлениям
+    
+      // 2) Направление к еде (по 4 направлениям)
       let dx = 0, dy = 0;
       if (nearest) {
         dx = nearest.x - head.x;
@@ -109,33 +98,62 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         dx = 0; dy = Math.sign(dy);
       }
-
-      // переместить голову с переносом по тору
-      head.x = (head.x + dx * this.speed + canvas.width )  % canvas.width;
-      head.y = (head.y + dy * this.speed + canvas.height) % canvas.height;
-
-      // обновить сегменты
-      this.segments.unshift({ x: head.x, y: head.y });
+    
+      // 3) Новая координата головы (с тором)
+      let newX = (head.x + dx*this.speed + canvas.width )  % canvas.width;
+      let newY = (head.y + dy*this.speed + canvas.height) % canvas.height;
+    
+      // 4) Если подползли бы ближе 8px к любой точке obstacles
+      const tooClose = obstacles.some(seg => {
+        const ddx = seg.x - newX, ddy = seg.y - newY;
+        return Math.hypot(ddx, ddy) < 8;
+      });
+      if (tooClose) {
+        // найдём ближайший сегмент-препятствие
+        let nearestObs = null; best = Infinity;
+        for (const seg of obstacles) {
+          const ddx = seg.x - head.x, ddy = seg.y - head.y;
+          const d2  = ddx*ddx + ddy*ddy;
+          if (d2 < best) { best = d2; nearestObs = seg; }
+        }
+        if (nearestObs) {
+          const odx = nearestObs.x - head.x;
+          const ody = nearestObs.y - head.y;
+          // если препятствие в большей степени по X, уходим по Y
+          if (Math.abs(odx) > Math.abs(ody)) {
+            dy = ody > 0 ? -1 : 1;
+            dx = 0;
+          } else {
+            dx = odx > 0 ? -1 : 1;
+            dy = 0;
+          }
+          newX = (head.x + dx*this.speed + canvas.width )  % canvas.width;
+          newY = (head.y + dy*this.speed + canvas.height) % canvas.height;
+        }
+      }
+    
+      // 5) Обновляем сегменты
+      this.segments.unshift({ x: newX, y: newY });
       if (this.segments.length > this.maxLength) {
         this.segments.pop();
       }
-
-      // «съесть» точку при соприкосновении
+    
+      // 6) «Съедаем» точку
       for (let i = 0; i < points.length; i++) {
         const p = points[i];
         if (
-          p.x < head.x + this.thickness &&
-          p.x + POINT_SIZE > head.x &&
-          p.y < head.y + this.thickness &&
-          p.y + POINT_SIZE > head.y
+          p.x < newX + this.thickness &&
+          p.x + POINT_SIZE > newX &&
+          p.y < newY + this.thickness &&
+          p.y + POINT_SIZE > newY
         ) {
           points.splice(i, 1);
           this.maxLength++;
           break;
         }
       }
-
-      // регенерировать, когда точки кончатся
+    
+      // 7) Регенерировать, если точки кончились
       if (points.length === 0) genPoints();
     }
 
@@ -147,11 +165,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // создаём две змейки:
-  const snakeLogo       = new Snake({ color: '#6C26B2', start: 'logo' });
+  // 5) Создаём две змейки
+  const snakeLogo        = new Snake({ color: '#6C26B2', start: 'logo' });
   const snakeBottomRight = new Snake({ color: '#FFD700', start: 'bottom-right' });
 
-  // 5) Цикл анимации
+  // 6) Главный цикл анимации
   (function loop() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -161,9 +179,11 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.fillRect(p.x, p.y, POINT_SIZE, POINT_SIZE);
     }
 
-    // обновляем и рисуем змейки
-    snakeLogo.step();        snakeLogo.draw();
-    snakeBottomRight.step(); snakeBottomRight.draw();
+    // шаг и отрисовка (каждая «видит» сегменты другой)
+    snakeLogo.step(snakeBottomRight.segments);
+    snakeBottomRight.step(snakeLogo.segments);
+    snakeLogo.draw();
+    snakeBottomRight.draw();
 
     requestAnimationFrame(loop);
   })();
