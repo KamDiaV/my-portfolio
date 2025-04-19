@@ -56,14 +56,22 @@ document.addEventListener('DOMContentLoaded', () => {
       const wrapperRect = wrapper.getBoundingClientRect();
 
       let startX, startY;
-      if (start === 'logo' && logoRect) {
-        startX = logoRect.left  - wrapperRect.left + (logoRect.width  - this.thickness) / 2;
+
+
+      if (start === 'bottom-right') {
+        const W = wrapper.clientWidth;
+        const H = wrapper.clientHeight;
+        const M = 10;
+        const t = this.thickness;
+        startX = W - t - M;
+        startY = H - t - M;
+      } else if (start === 'logo' && logoRect) {
+        startX = logoRect.left   - wrapperRect.left + (logoRect.width  - this.thickness) / 2;
         startY = logoRect.bottom - wrapperRect.top  + 10;
       } else {
-        const scrollX = window.pageXOffset;
-        const scrollY = window.pageYOffset;
-        startX = scrollX + window.innerWidth  - this.thickness - 10 - wrapperRect.left;
-        startY = scrollY + window.innerHeight - this.thickness - 10 - wrapperRect.top;
+        // fallback
+        startX = Math.random() * (canvas.width  - this.thickness);
+        startY = Math.random() * (canvas.height - this.thickness);
       }
 
       // создаём начальные сегменты
