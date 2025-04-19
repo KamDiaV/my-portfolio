@@ -48,6 +48,8 @@ Welcome to my personal portfolio! This site showcases my skills, technologies I 
 ### Running Locally
   Just open index.html in your browser
 
+---
+
 ## 🎛 Usage & Interactivity
 
 ### Navigation & Burger Menu
@@ -85,11 +87,20 @@ Click Contact Me:
 - Can close via the “×” button, backdrop click, or Esc key
 - Styled and animated via SCSS in contact-popup block
 
+---
+
 ## 🔧 BEM Methodology
 All CSS classes follow the Block__Element--Modifier pattern. This keeps styles modular, reusable, and easy to maintain.
+
+---
 
 ## 👩‍💻 Author
 Diana Stepanova
 
 - Telegram: [@kamikodi](https://t.me/kamikodi)
 - [LinkedIn](https://www.linkedin.com/in/diana-stepanova-9a08a335b/)
+
+--- 
+
+### Enjoy coding!
+If you have any questions or suggestions for improving the project, please feel free to open a pull request on GitHub.
