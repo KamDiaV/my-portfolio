@@ -29,31 +29,6 @@ Welcome to my personal portfolio! This site showcases my skills, technologies I 
 
 ---
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- A modern browser (Chrome, Firefox, Safari, Edge)  
-- Node.js & npm (optional, if you want to compile SCSS locally)  
-
-### Installation
-
-1. **Clone** this repository  
-   git clone https://github.com/KamDiaV/my-portfolio.git
-   cd my-portfolio
-
-2. **Install dependencies** (Optional)
-  If you wish to rebuild SCSS:
-  npm install
-
-3. **Compile SCSS** 
-  npm run build:css
-
-### Running Locally
-  Just open index.html in your browser
-
----
-
 ## 🎛 Usage & Interactivity
 
 ### Navigation & Burger Menu
@@ -90,11 +65,6 @@ Click Contact Me:
 - Shows a modal with a Telegram link
 - Can close via the “×” button, backdrop click, or Esc key
 - Styled and animated via SCSS in contact-popup block
-
----
-
-## 🔧 BEM Methodology
-All CSS classes follow the Block__Element--Modifier pattern. This keeps styles modular, reusable, and easy to maintain.
 
 ---
 
